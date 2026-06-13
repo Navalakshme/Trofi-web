@@ -10,6 +10,8 @@
 :root{--orange:var(--blue)}
 .btn-orange{background:var(--orange);color:#fff}
 .btn-orange:hover{background:var(--blue-dark);transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.hero-badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:28px}
+.badge{display:inline-flex;align-items:center;gap:5px;padding:6px 12px;background:rgba(0,84,196,0.07);border:1px solid rgba(0,84,196,0.12);border-radius:100px;font-size:0.75rem;font-weight:600;color:var(--blue-dark)}
 
 .hero-p{font-size:1.15rem;color:var(--text);opacity:0.85;margin-bottom:28px;line-height:1.65;max-width:540px}
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap}
@@ -154,11 +156,16 @@
     <div>
       <nav class="breadcrumb fade-up"><a href="../index.html">Home</a> › <span style="color:var(--orange)">TROFi Eats</span></nav>
       <div class="hero-tag fade-up">🍔 TROFi Eats</div>
-      <h1 class="display-hero fade-up delay-1" style="font-size:clamp(44px,8vw,90px);">Restaurant Quality,<br/><span>Doorstep Speed,</span><br/>Exact Need!</h1>
-      <p class="hero-p fade-up delay-2">1,000+ restaurant partners. Hot food in 30 minutes or it's on us. Live tracking from kitchen to your door.</p>
+      <h1 class="display-hero fade-up delay-1" style="font-size:clamp(56px,10vw,110px) !important;">Restaurant Quality,<br/><span>Doorstep Speed,</span><br/>Exact Need!</h1>
+      <p class="hero-p fade-up delay-2">Large number of restaurant partners, delivered while hot. Live tracking from kitchen to your door.</p>
       <div class="hero-btns fade-up delay-3">
         <a href="../index.html#download" class="btn btn-orange btn-lg">Order Food Now →</a>
         <a href="partners.html#restaurant" class="btn btn-outline btn-lg">List Your Restaurant</a>
+      </div>
+      <div class="hero-badges fade-up delay-4">
+        <span class="badge">🛡️ Quality Checked Kitchens</span>
+        <span class="badge">🌡️ Hot Bag Temperature Insulated</span>
+        <span class="badge">📦 Live Tracking Prepared & Dispatched</span>
       </div>
     </div>
     <div class="hero-mockup slide-right delay-2">
@@ -167,20 +174,12 @@
   </div>
 </section>
 
-<!-- STATS -->
-<div class="stats-bar">
-  <div class="stats-inner">
-    <div class="stat-card"><div class="stat-num">1000+</div><div class="stat-lbl">Restaurant Partners</div></div>
-    <div class="stat-card"><div class="stat-num">30 min</div><div class="stat-lbl">Average Delivery</div></div>
-    <div class="stat-card"><div class="stat-num">500K+</div><div class="stat-lbl">Orders Per Day</div></div>
-    <div class="stat-card"><div class="stat-num">4.8★</div><div class="stat-lbl">Average Rating</div></div>
-  </div>
-</div>
+
 
 <!-- CUISINES -->
 <div class="section">
   <div class="section-label2 fade-up">What's on the Menu</div>
-  <div class="section-title fade-up">Every Craving, Satisfied.</div>
+  <div class="section-title fade-up" style="font-size: clamp(48px, 7vw, 90px) !important; font-family: var(--font-display) !important; line-height: 1 !important; margin-bottom: 20px !important;">Every Craving, Satisfied.</div>
   <p class="section-sub fade-up delay-1">From biryani to burgers, from South Indian thali to continental — browse by cuisine or restaurant.</p>
   <div class="cuisine-grid">
     <div class="cuisine-card fade-up"><img src="../assets/north-indian.png" alt="North Indian"/><span>North Indian</span></div>
@@ -203,9 +202,9 @@
   <div class="split">
     <div class="slide-left">
       <div class="section-label2">TROFi Eats Advantage</div>
-      <div class="section-title">Why We Beat Competitor 1 & Competitor 2</div>
+      <div class="section-title">Why We Beat the Competition</div>
       <div class="steps-list">
-        <div class="step"><div class="step-num">⏱</div><div><h4>30-Minute Guarantee</h4><p>If your food arrives late, you get ₹50 in TROFi Coins automatically. No questions asked.</p></div></div>
+        <div class="step"><div class="step-num">⏱</div><div><h4>Fast Delivery Guarantee</h4><p>If your food arrives late, you get a coin bonus in TROFi Coins automatically. No questions asked.</p></div></div>
         <div class="step"><div class="step-num">🌡</div><div><h4>Hot Bag Technology</h4><p>All TROFi Eats partners use insulated smart-lock bags that keep food at serving temperature.</p></div></div>
         <div class="step"><div class="step-num">📦</div><div><h4>Live Kitchen Tracking</h4><p>See exactly when your order is being prepared, packed and dispatched — not just estimated times.</p></div></div>
         <div class="step"><div class="step-num">💰</div><div><h4>No Hidden Charges</h4><p>The price you see is the price you pay. Zero platform fee, transparent packaging and delivery costs.</p></div></div>
@@ -226,10 +225,10 @@
   <div class="testi-grid">
     <div class="testi-card fade-up">
       <div class="stars">★★★★★</div>
-      <p>"The biryani arrived in 26 minutes and was hotter than what I get eating in the restaurant. TROFi Eats genuinely cares about food quality."</p>
+      <p>"The biryani arrived in record time and was hotter than what I get eating in the restaurant. TROFi Eats genuinely cares about food quality."</p>
       <div class="testi-author">
         <div class="avatar" style="background:linear-gradient(135deg,var(--blue),#1A7AE8)">VL</div>
-        <div><div class="author-name">Vidya Lakshmi</div><div class="author-info">Food blogger · Bengaluru</div></div>
+        <div><div class="author-info">Food blogger · Bengaluru</div></div>
       </div>
     </div>
     <div class="testi-card fade-up delay-1">
@@ -237,15 +236,15 @@
       <p>"Finally an app with no surprise platform fee at checkout. What I see is what I pay. The live kitchen tracking is addictive — I watched my dosa being made!"</p>
       <div class="testi-author">
         <div class="avatar" style="background:linear-gradient(135deg,#0054C4,#1A7AE8)">SM</div>
-        <div><div class="author-name">Siddharth Menon</div><div class="author-info">Tech Lead · Hyderabad</div></div>
+        <div><div class="author-info">Tech Lead · Hyderabad</div></div>
       </div>
     </div>
     <div class="testi-card fade-up delay-2">
       <div class="stars">★★★★★</div>
-      <p>"Competitor 2 membership felt like a scam after I tried SuperPass. Unlimited free delivery and I earn Ride coins when I order food? My evening commute is now basically free."</p>
+      <p>"Other delivery service memberships felt like a scam after I tried SuperPass. Unlimited free delivery and I earn Ride coins when I order food? My evening commute is now basically free."</p>
       <div class="testi-author">
         <div class="avatar" style="background:linear-gradient(135deg,var(--blue),#1A7AE8)">DP</div>
-        <div><div class="author-name">Deepika Patil</div><div class="author-info">HR Manager · Pune</div></div>
+        <div><div class="author-info">HR Manager · Pune</div></div>
       </div>
     </div>
   </div>
@@ -276,7 +275,7 @@
     <div class="footer-col"><h4>Support</h4><a href="contact.html">Help Centre</a><a href="contact.html#grievance">Grievance</a><a href="#">Privacy</a><a href="#">Terms</a></div>
   </div>
   <div class="footer-bottom">
-  <p>© 2025 TROFi Technologies Pvt. Ltd. · Bengaluru, India</p>
+  <p>© TROFi Ventures Private Limited · Bengaluru, India</p>
   <p>Secured & Regulated · Privacy Protected</p>
 </div>
 </footer>

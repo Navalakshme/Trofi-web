@@ -157,15 +157,11 @@ body {
 
   .display-hero,
   h1,
-  .hero h1 {
+  .hero h1,
+  .hero-contact-container h1.display-hero {
     font-size: clamp(48px, 16vw, 68px) !important;
     line-height: 0.98 !important;
     white-space: normal !important;
-  }
-
-  /* Eats page hero — reduce size so 2-word lines fit on one line each */
-  .hero:not(#home) .display-hero[style*="clamp(44px"] {
-    font-size: clamp(36px, 10vw, 54px) !important;
   }
 
   .hero-line {

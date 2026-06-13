@@ -180,13 +180,64 @@ h1, h2, h3, h4 { line-height: 1.1; }
   font-weight: 600;
   padding: 7px 10px;
   border-radius: var(--radius-sm);
-  color: var(--blue-dark) !important;
   transition: var(--transition);
   white-space: nowrap;
 }
 
-.nav-links a:hover { color: var(--blue); background: rgba(0,84,196,0.06); }
-.nav-links a.active { color: var(--blue); font-weight: 600; }
+@keyframes navBreatheWhite {
+  0%, 100% {
+    text-shadow: 0 0 4px rgba(255,255,255,0.4), 0 0 8px rgba(255,255,255,0.2);
+    color: #ffffff;
+    opacity: 0.9;
+  }
+  50% {
+    text-shadow: 0 0 12px rgba(255,255,255,0.95), 0 0 20px rgba(255,255,255,0.6);
+    color: #ffffff;
+    opacity: 1;
+  }
+}
+
+@keyframes navBreatheBlue {
+  0%, 100% {
+    text-shadow: 0 0 4px rgba(0,84,196,0.1), 0 0 8px rgba(0,84,196,0.05);
+    color: var(--blue);
+    opacity: 0.95;
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(0,84,196,0.5), 0 0 16px rgba(0,84,196,0.3);
+    color: var(--blue);
+    opacity: 1;
+  }
+}
+
+.nav:not(.scrolled) .nav-links a {
+  color: var(--blue) !important;
+}
+
+.nav:not(.scrolled) .nav-links a.active {
+  animation: navBreatheBlue 3s ease-in-out infinite;
+}
+
+.nav:not(.scrolled) .nav-links a:hover {
+  background: rgba(0,84,196,0.06);
+  color: var(--blue-dark) !important;
+  text-shadow: 0 0 12px rgba(0,84,196,0.6);
+}
+
+.nav.scrolled .nav-links a {
+  color: var(--blue) !important;
+}
+
+.nav.scrolled .nav-links a.active {
+  color: var(--blue-dark) !important;
+  animation: navBreatheBlue 3s ease-in-out infinite;
+}
+
+.nav.scrolled .nav-links a:hover {
+  background: rgba(0,84,196,0.06);
+  color: var(--blue-dark) !important;
+  text-shadow: 0 0 12px rgba(0,84,196,0.6);
+}
 
 .nav-cta {
   display: flex;
@@ -438,6 +489,7 @@ h1, h2, h3, h4 { line-height: 1.1; }
   overflow: hidden;
   width: 100%;
   padding: 20px 0;
+  display: flex;
 }
 
 .marquee-track {
@@ -736,7 +788,7 @@ h1, h2, h3, h4 { line-height: 1.1; }
 
 .nav-links a.active {
   display: inline-block;
-  animation: breathe 3s ease-in-out infinite;
+  /* animation: breathe 3s ease-in-out infinite; */
 }
 
 .mobile-menu a.active {
@@ -942,16 +994,7 @@ h1, h2, h3, h4 { line-height: 1.1; }
   position: relative;
   overflow: hidden;
 }
-.superpass-card::before {
-  content: 'SUPERPASS';
-  font-family: var(--font-display);
-  font-size: 100px;
-  position: absolute;
-  right: -20px; bottom: -20px;
-  color: rgba(255,255,255,0.04);
-  letter-spacing: 0.1em;
-  pointer-events: none;
-}
+/* SuperPass card watermark removed */
 
 /* ── Responsive ── */
 @media (max-width: 1024px) {
@@ -1220,5 +1263,143 @@ h1, h2, h3, h4 { line-height: 1.1; }
   padding: 40px 48px 48px !important;
   margin-top: 40px !important;
   border-top: none !important;
+}
+
+/* ==========================================================================
+   TROFi COLOR AND CONTRAST ENFORCEMENT
+   ========================================================================== */
+
+/* Redefine text color variables to logo blue globally for white screens */
+:root {
+  --text: var(--blue);
+  --text-light: var(--blue);
+  --gray-3: var(--blue);
+  --gray-4: var(--blue);
+  --blue-dark: var(--blue);
+  --blue-deeper: var(--blue);
+}
+
+/* 1. All text on white/light screens must be in the logo blue */
+body, h1, h2, h3, h4, h5, h6, p, span, a, li, td, th, strong, small, em, label, input, select, textarea, .marquee-item {
+  color: var(--blue);
+}
+
+/* 2. Exceptions: Buttons and Badges on white screens should keep their correct styling */
+.btn-primary, .btn-primary *, .btn-primary:hover, .btn-primary:hover * {
+  color: #001F5B !important; /* Keep original dark-blue text on primary buttons */
+}
+.btn-outline, .btn-outline *, .btn-outline:hover, .btn-outline:hover * {
+  color: var(--blue) !important;
+}
+.btn-outline-yellow, .btn-outline-yellow *, .btn-outline-yellow:hover, .btn-outline-yellow:hover * {
+  color: var(--blue) !important;
+}
+.btn-outline-white, .btn-outline-white *, .btn-outline-white:hover, .btn-outline-white:hover * {
+  color: var(--white) !important;
+}
+.btn-secondary, .btn-secondary *, .btn-secondary:hover, .btn-secondary:hover * {
+  color: var(--white) !important;
+}
+.badge, .badge *, .hero-tag, .hero-tag * {
+  color: #003A8C !important;
+}
+.city-tag.active {
+  color: var(--blue) !important;
+}
+.city-tag.active:hover {
+  color: #FFFFFF !important;
+}
+.city-tag.coming {
+  color: #9A9A94 !important;
+}
+
+/* Unscrolled Navbar: keep text blue at all times, preserve borders */
+#navbar:not(.scrolled) .nav-links a,
+#navbar:not(.scrolled) .hamburger span {
+  color: var(--blue) !important;
+}
+#navbar:not(.scrolled) .btn-outline,
+#navbar:not(.scrolled) .btn-outline * {
+  color: var(--blue) !important;
+  border-color: var(--blue) !important;
+}
+#navbar:not(.scrolled) .btn-outline-yellow,
+#navbar:not(.scrolled) .btn-outline-yellow * {
+  color: var(--blue) !important;
+  border-color: var(--yellow) !important;
+}
+#navbar:not(.scrolled) .btn-outline:hover {
+  color: var(--white) !important;
+  background: var(--blue) !important;
+  border-color: var(--blue) !important;
+}
+#navbar:not(.scrolled) .btn-outline-yellow:hover {
+  color: #003A8C !important;
+  background: var(--yellow) !important;
+  border-color: var(--yellow) !important;
+}
+
+
+
+/* 3. Everything inside blue/dark backgrounds must be completely white (no shades of white) */
+.stats-bar, .stats-bar *,
+.footer, .footer *,
+.superpass-card, .superpass-card *,
+.pay-banner, .pay-banner *,
+.service-banner, .service-banner *,
+.cta-band, .cta-band *,
+.office-card, .office-card *,
+.partner-section, .partner-section *,
+.partner-card, .partner-card *,
+.partner-perks, .partner-perks *,
+[style*="background:var(--blue)"], [style*="background:var(--blue)"] *,
+[style*="background: var(--blue)"], [style*="background: var(--blue)"] *,
+[style*="background-color:var(--blue)"], [style*="background-color:var(--blue)"] *,
+[style*="background-color: var(--blue)"], [style*="background-color: var(--blue)"] *,
+[style*="background:var(--blue-dark)"], [style*="background:var(--blue-dark)"] *,
+[style*="background: var(--blue-dark)"], [style*="background: var(--blue-dark)"] *,
+[style*="background-color:var(--blue-dark)"], [style*="background-color:var(--blue-dark)"] *,
+[style*="background-color: var(--blue-dark)"], [style*="background-color: var(--blue-dark)"] *,
+[style*="background:var(--blue-deeper)"], [style*="background:var(--blue-deeper)"] *,
+[style*="background: var(--blue-deeper)"], [style*="background: var(--blue-deeper)"] *,
+[style*="background-color:var(--blue-deeper)"], [style*="background-color:var(--blue-deeper)"] *,
+[style*="background-color: var(--blue-deeper)"], [style*="background-color: var(--blue-deeper)"] *,
+[style*="background:var(--dark)"], [style*="background:var(--dark)"] *,
+[style*="background: var(--dark)"], [style*="background: var(--dark)"] *,
+[style*="background-color:var(--dark)"], [style*="background-color:var(--dark)"] *,
+[style*="background-color: var(--dark)"], [style*="background-color: var(--dark)"] *,
+[style*="background: var(--dark-2)"], [style*="background: var(--dark-2)"] *,
+[style*="background-color: var(--dark-2)"], [style*="background-color: var(--dark-2)"] *,
+section[style*="background: var(--dark)"], section[style*="background: var(--dark)"] *,
+div[style*="background:var(--dark)"], div[style*="background:var(--dark)"] * {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  opacity: 1 !important;
+}
+
+/* Redefining Old Price to be distinct on dark backgrounds */
+.price-old {
+  color: #FFFFFF !important;
+  text-decoration: line-through !important;
+  opacity: 0.6 !important;
+}
+.price-new, .price-new * {
+  color: var(--yellow) !important;
+}
+
+/* Ensure App Store and Google Play buttons have blue text on their white background, overriding global dark backgrounds */
+.app-buttons .app-btn,
+.app-buttons .app-btn *,
+.app-btn,
+.app-btn * {
+  color: var(--blue) !important;
+  -webkit-text-fill-color: var(--blue) !important;
+}
+.app-buttons .app-btn:hover,
+.app-buttons .app-btn:hover *,
+.app-btn:hover,
+.app-btn:hover * {
+  color: #003A8C !important;
+  -webkit-text-fill-color: #003A8C !important;
 }
 
