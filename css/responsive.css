@@ -378,6 +378,14 @@ body {
     padding: 32px 22px !important;
   }
 
+  .superpass-card .btn {
+    white-space: normal !important;
+    text-align: center;
+    width: 100% !important;
+    display: inline-flex;
+    justify-content: center;
+  }
+
   .tabs {
     width: 100% !important;
     overflow-x: auto;
