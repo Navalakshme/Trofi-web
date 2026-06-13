@@ -389,24 +389,34 @@ body {
   .tabs {
     width: 100% !important;
     display: flex !important;
-    gap: 4px !important;
-    overflow-x: hidden !important;
-    justify-content: space-between !important;
-    padding: 4px !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    background: var(--gray-1) !important;
+    border-radius: 16px !important;
+    padding: 8px !important;
+    margin: 0 auto 32px !important;
+    overflow-x: visible !important;
   }
 
   .tab {
-    flex: 1 1 0 !important;
+    width: 100% !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: 10px 4px !important;
-    font-size: 0.8rem !important;
+    padding: 14px 16px !important;
+    font-size: 0.9rem !important;
+    border-radius: 12px !important;
+    background: transparent !important;
+    color: var(--gray-3) !important;
+    border: none !important;
     white-space: nowrap !important;
+    box-sizing: border-box !important;
   }
 
-  .tab-long-text {
-    display: none !important;
+  .tab.active {
+    background: var(--blue) !important;
+    color: #fff !important;
+    box-shadow: var(--shadow-sm) !important;
   }
 
   .form-row {
