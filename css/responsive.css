@@ -388,13 +388,25 @@ body {
 
   .tabs {
     width: 100% !important;
-    overflow-x: auto;
-    justify-content: flex-start;
+    display: flex !important;
+    gap: 4px !important;
+    overflow-x: hidden !important;
+    justify-content: space-between !important;
+    padding: 4px !important;
   }
 
   .tab {
-    flex: 0 0 auto;
-    white-space: nowrap;
+    flex: 1 1 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 10px 4px !important;
+    font-size: 0.8rem !important;
+    white-space: nowrap !important;
+  }
+
+  .tab-long-text {
+    display: none !important;
   }
 
   .form-row {
