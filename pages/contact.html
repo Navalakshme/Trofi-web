@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Contact TROFi — Help Centre & Support</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="icon" type="image/png" href="../assets/trofi-logo-transparent.png" />
+<style>
+
+
+
+/* COMMON SECTIONS */
+.section{padding:80px 48px}
+.off-section{background:var(--off-white);padding:80px 48px}
+.section-tag{display:inline-flex;padding:5px 12px;background:rgba(0,84,196,0.08);border-radius:100px;color:var(--blue);font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:14px}
+.section-title{font-family:var(--font-display);font-size:clamp(36px,5vw,60px);letter-spacing:0.02em;margin-bottom:12px;line-height:1.05}
+.section-sub{font-size:0.95rem;color:var(--text-light);max-width:480px;line-height:1.65;margin-bottom:40px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.split-img{border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-lg)}
+.split-img img{width:100%;height:440px;object-fit:cover}
+
+/* MOCKUP — clean no shadow */
+.mockup-clean img{width:100%;height:auto;object-fit:contain;border-radius:44px;background:transparent;box-shadow:none;filter:none;display:block}
+
+/* FEATURE CARDS */
+.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+.feat-item{padding:18px;background:#fff;border-radius:var(--radius-md);box-shadow:var(--shadow-sm)}
+.feat-item .icon{font-size:24px;margin-bottom:8px}
+.feat-item strong{font-size:0.88rem;display:block;margin-bottom:4px}
+.feat-item p{font-size:0.8rem;color:var(--text-light);line-height:1.5}
+
+/* STATS ROW */
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:960px;margin:0 auto}
+.stat-card{background:#fff;border-radius:var(--radius-lg);padding:28px 20px;text-align:center;border-top:3px solid var(--yellow)}
+.stat-num{font-family:var(--font-display);font-size:48px;line-height:1}
+.stat-lbl{font-size:0.7rem;font-weight:600;color:var(--gray-3);text-transform:uppercase;letter-spacing:0.06em;margin-top:6px}
+
+/* STEPS */
+.step{display:flex;gap:18px;padding-bottom:28px;position:relative}
+.step:not(:last-child)::before{content:'';position:absolute;left:19px;top:44px;bottom:0;width:2px;background:linear-gradient(to bottom,var(--blue),transparent);opacity:0.2}
+.step-num{width:40px;height:40px;border-radius:50%;background:var(--blue);color:#fff;font-family:var(--font-display);font-size:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 16px rgba(0,84,196,0.3)}
+.step h4{font-size:0.95rem;font-weight:700;margin-bottom:5px}
+.step p{font-size:0.85rem;color:var(--text-light);line-height:1.6}
+
+/* CTA BAND */
+.cta-band{border-radius:var(--radius-xl);padding:60px;text-align:center;position:relative;overflow:hidden}
+.cta-band h2{font-family:var(--font-display);font-size:clamp(36px,4vw,56px);color:#fff;margin-bottom:14px}
+.cta-band p{color:rgba(255,255,255,0.72);max-width:460px;margin:0 auto 32px;font-size:0.92rem}
+.cta-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+/* FOOTER */
+.footer{background:#0A0A0F;padding:56px 48px 24px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.footer-brand img{height:64px;margin-bottom:14px}
+.footer-brand p{color:rgba(255,255,255,0.5);font-size:0.85rem;line-height:1.7;max-width:240px;margin-top:10px}
+.footer-col h4{font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--yellow);margin-bottom:14px}
+.footer-col a{display:block;font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:8px}
+.footer-bottom{padding-top:20px;display:flex;justify-content:space-between}
+.footer-bottom p{font-size:0.75rem;color:rgba(255,255,255,0.3)}
+
+.hero-p{font-size:1.15rem;color:var(--text);opacity:0.85;max-width:540px;line-height:1.65;margin-bottom:28px}
+.hero-badges{display:flex;gap:8px;flex-wrap:wrap;justify-content:center !important}
+.badge{display:inline-flex;align-items:center;gap:5px;padding:6px 12px;background:rgba(0,84,196,0.07);border:1px solid rgba(0,84,196,0.12);border-radius:100px;font-size:0.75rem;font-weight:600;color:var(--blue-dark);}
+.channels{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px}
+.channel-card{background:#fff;border-radius:var(--radius-xl);padding:32px 24px;text-align:center;box-shadow:var(--shadow-sm);border-top:3px solid transparent;transition:all 0.25s}
+.channel-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-top-color:var(--blue)}
+.channel-img{width:48px;height:48px;object-fit:cover;border-radius:50%;margin-bottom:12px;box-shadow:var(--shadow-sm);display:inline-block}
+.channel-card h3{font-size:0.95rem;font-weight:700;margin-bottom:8px}
+.channel-card p{font-size:0.82rem;color:var(--text-light);line-height:1.55;margin-bottom:12px}
+.channel-cta{font-size:0.8rem;font-weight:700;color:var(--blue)}
+.help-topics{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.help-topic{background:#fff;border-radius:var(--radius-lg);padding:22px;box-shadow:var(--shadow-sm);display:flex;gap:14px;align-items:flex-start;cursor:pointer;transition:all 0.25s}
+.help-topic:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.help-icon-img{width:44px;height:44px;object-fit:cover;border-radius:var(--radius-md);flex-shrink:0}
+.help-topic h4{font-size:0.88rem;font-weight:700;margin-bottom:4px}
+.help-topic p{font-size:0.78rem;color:var(--text-light)}
+.form-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:start}
+.form-group{margin-bottom:18px}
+.form-group label{display:block;font-size:0.82rem;font-weight:600;margin-bottom:7px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 14px;border:1.5px solid var(--gray-2);border-radius:var(--radius-md);font-family:var(--font-body);font-size:0.9rem;color:var(--text);background:#fff;outline:none;transition:border 0.2s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(0,84,196,0.08)}
+.form-group textarea{resize:vertical;min-height:110px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.office-card{background:linear-gradient(135deg,var(--blue-deeper),var(--blue));border-radius:var(--radius-xl);padding:36px;color:#fff;margin-bottom:20px}
+.office-detail{display:flex;align-items:flex-start;gap:12px;margin-bottom:18px}
+.office-detail .ic{width:18px;height:18px;flex-shrink:0;margin-top:4px}
+.office-detail strong{display:block;font-size:0.78rem;color:rgba(255,255,255,0.5);margin-bottom:3px}
+.office-detail p{font-size:0.88rem;color:#fff;margin:0;line-height:1.55}
+.office-detail a{color:var(--yellow)}
+.grievance-card{background:var(--off-white);border-radius:var(--radius-xl);padding:32px;border-left:4px solid var(--blue)}
+.grievance-card h3{font-size:1.1rem;font-weight:700;margin-bottom:12px}
+.grievance-card p{color:var(--text-light);font-size:0.85rem;line-height:1.65;margin-bottom:8px}
+.grievance-card a{color:var(--blue);font-weight:600}
+
+/* Left-aligned contact hero styling */
+.hero-contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  justify-content: flex-start;
+  margin: 10px auto 0;
+  max-width: 1440px;
+  width: 100%;
+  padding: 20px 32px 40px;
+  position: relative;
+  z-index: 10;
+}
+
+
+
+.hero-contact-container .hero-tag {
+  margin-bottom: 20px;
+}
+
+.hero-contact-container h1.display-hero {
+  font-family: var(--font-display);
+  font-size: clamp(86px, 12vw, 160px) !important;
+  color: var(--blue);
+  line-height: 0.9 !important;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.hero-contact-container h1.display-hero span {
+  color: var(--white) !important;
+  -webkit-text-stroke: 1.5px var(--blue) !important;
+}
+
+.hero-contact-container .hero-p {
+  font-size: 1.15rem;
+  color: var(--text);
+  opacity: 0.85;
+  max-width: 620px;
+  line-height: 1.65;
+  margin: 0 0 28px 0;
+}
+
+.hero-contact-container .hero-badges {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-start !important;
+}
+
+.hero-contact-container .hero-badges .badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: rgba(0,84,196,0.07);
+  border: 1px solid rgba(0,84,196,0.12);
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--blue-dark);
+}
+</style>
+<link rel="stylesheet" href="../css/responsive.css" />
+</head><body>
+
+
+<nav class="nav transparent" id="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">
+      <img src="../assets/trofi-logo-transparent.png" alt="TROFi" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="ride.html">TROFi Ride</a></li>
+      <li><a href="eats.html">TROFi Eats</a></li>
+      <li><a href="mart.html">TROFi Mart</a></li>
+      <li><a href="pay.html">TROFi Pay</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="partners.html">Partners</a></li>
+      <li><a href="#" class="active">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="partners.html" class="btn btn-outline btn-sm">Become a Partner</a>
+      <a href="../index.html#download" class="btn btn-outline-yellow btn-sm">Get the App</a>
+    </div>
+    <button class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu">
+  <a href="../index.html">Home</a>
+  <a href="ride.html">TROFi Ride</a>
+  <a href="eats.html">TROFi Eats</a>
+  <a href="mart.html">TROFi Mart</a>
+  <a href="pay.html">TROFi Pay</a>
+  <a href="about.html">About</a>
+  <a href="partners.html">Partners</a>
+  <a href="contact.html">Contact</a>
+  <a href="../index.html#download" class="btn btn-primary btn-lg" style="margin-top:24px;">Get the App</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-doodle hero-contact-doodle" aria-hidden="true"></div>
+  <div class="hero-contact-container">
+    <nav class="breadcrumb fade-up"><a href="../index.html">Home</a> › <span style="color:var(--blue-dark)">Contact Support</span></nav>
+    <div class="hero-tag fade-up"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align: middle; margin-right: 6px;"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>Help Centre</div>
+    <h1 class="display-hero fade-up delay-1">We're<br/>Here<br/><span>For You.</span></h1>
+    <p class="hero-p fade-up delay-2">Reach us 24×7 via chat, phone, email or social. Average response time: 47 minutes.</p>
+    <div class="hero-badges fade-up delay-3">
+      <span class="badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right: 4px;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Avg response: 47 min</span>
+      <span class="badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right: 4px;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>4.8/5 support rating</span>
+      <span class="badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right: 4px;"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>24×7 availability</span>
+    </div>
+  </div>
+</section>
+
+<div class="section">
+  <div style="text-align:center;margin-bottom:8px">
+    <div class="section-tag" style="margin:0 auto 14px">Reach Us</div>
+    <div class="section-title">Choose How to <span style="color:var(--blue)">Connect</span></div>
+  </div>
+  <div class="channels">
+    <div class="channel-card"><img src="../assets/contact-chat-icon.png" class="channel-img" alt="Chat"/><h3>In-App Chat</h3><p>Fastest resolution. Chat directly from the TROFi app — average reply under 3 minutes.</p><div class="channel-cta">Open TROFi App →</div></div>
+    <div class="channel-card"><img src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=150&q=80" class="channel-img" alt="Phone"/><h3>Phone Support</h3><p>Call our 24×7 helpline for urgent ride, delivery, or payment issues.</p><div class="channel-cta">1800-123-4567 (Toll Free)</div></div>
+    <div class="channel-card"><img src="https://images.unsplash.com/photo-1557200134-90327ee9fafa?w=150&q=80" class="channel-img" alt="Email"/><h3>Email Support</h3><p>For non-urgent queries, billing issues, or escalations. We respond within 4 business hours.</p><div class="channel-cta">support@trofi.in →</div></div>
+    <div class="channel-card"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="channel-img" alt="Social"/><h3>Social Support</h3><p>Tweet or DM us @TROFiApp for quick public escalations. Live 7am–11pm daily.</p><div class="channel-cta">@TROFiApp →</div></div>
+  </div>
+</div>
+
+<div class="off-section">
+  <div style="text-align:center">
+    <div class="section-tag" style="margin:0 auto 14px">Self Help</div>
+    <div class="section-title">Browse by <span style="color:var(--blue)">Topic</span></div>
+    <p class="section-sub" style="text-align:center;margin:12px auto 0">Most issues are solved instantly in-app. Find your category below.</p>
+  </div>
+  <div class="help-topics">
+    <div class="help-topic"><img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=100&q=80" class="help-icon-img" alt="Rides"/><div><h4>Ride Issues</h4><p>Driver not arriving, wrong route, fare disputes, cancellation charges</p></div></div>
+    <div class="help-topic"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=100&q=80" class="help-icon-img" alt="Food"/><div><h4>Food Order Issues</h4><p>Late delivery, wrong items, quality complaints, missing order</p></div></div>
+    <div class="help-topic"><img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=100&q=80" class="help-icon-img" alt="Mart"/><div><h4>TROFi Mart Issues</h4><p>Item out of stock, delivery beyond 10 min, damaged goods</p></div></div>
+    <div class="help-topic"><img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=100&q=80" class="help-icon-img" alt="Payments"/><div><h4>Payment & Wallet</h4><p>Refunds, failed transactions, wallet top-up, TROFi Coins</p></div></div>
+    <div class="help-topic"><img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=100&q=80" class="help-icon-img" alt="Account"/><div><h4>Account & Security</h4><p>Login issues, suspicious activity, change phone number</p></div></div>
+    <div class="help-topic"><img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" class="help-icon-img" alt="SuperPass"/><div><h4>SuperPass</h4><p>Subscription billing, benefits not applied, cancellation & refunds</p></div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="form-grid">
+    <div>
+      <div class="section-tag">Send a Message</div>
+      <div class="section-title">Write to <span style="color:var(--blue)">Us.</span></div>
+      <p style="color:var(--text-light);font-size:0.9rem;line-height:1.65;margin:14px 0 28px">We read every message. Typical response time: under 4 hours on weekdays.</p>
+      <div class="form-row">
+        <div class="form-group"><label>First Name *</label><input type="text" placeholder="Arjun"/></div>
+        <div class="form-group"><label>Last Name *</label><input type="text" placeholder="Reddy"/></div>
+      </div>
+      <div class="form-group"><label>Email Address *</label><input type="email" placeholder="arjun@email.com"/></div>
+      <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="+91 98765 43210"/></div>
+      <div class="form-group"><label>Category *</label>
+        <select><option>Select a topic…</option><option>Ride Issue</option><option>Food Order Issue</option><option>TROFi Mart Issue</option><option>Payment / Wallet</option><option>Account & Security</option><option>Partnership Enquiry</option><option>Other</option></select>
+      </div>
+      <div class="form-group"><label>Message *</label><textarea placeholder="Describe your issue in detail…"></textarea></div>
+      <button class="btn btn-secondary btn-lg" style="width:100%;justify-content:center">Send Message →</button>
+    </div>
+    <div>
+      <div class="office-card">
+        <div class="section-tag" style="background:rgba(255,221,0,0.2);color:var(--yellow);margin-bottom:22px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align: middle; margin-right: 6px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Our Offices</div>
+        
+        <!-- Headquarters -->
+        <div class="office-detail">
+          <svg class="ic" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5"/></svg>
+          <div><strong>Headquarters</strong><p>TROFi Technologies Pvt. Ltd.<br/>No. 42, 3rd Floor, Outer Ring Road,<br/>Bellandur, Bengaluru — 560103</p></div>
+        </div>
+        
+        <!-- Mumbai -->
+        <div class="office-detail">
+          <svg class="ic" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5"/></svg>
+          <div><strong>Mumbai Office</strong><p>WeWork Galaxy, Lower Parel, Mumbai — 400013</p></div>
+        </div>
+        
+        <!-- Delhi -->
+        <div class="office-detail">
+          <svg class="ic" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5"/></svg>
+          <div><strong>Delhi NCR Office</strong><p>DLF Cyber City, Tower 8, Gurugram — 122002</p></div>
+        </div>
+        
+        <!-- Phone -->
+        <div class="office-detail">
+          <svg class="ic" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 0 1 2-2h3.28a1 1 0 0 1 .94.725l.548 2.2a1 1 0 0 1-.321.988l-1.305.98a10.582 10.582 0 0 0 4.872 4.872l.98-1.305a1 1 0 0 1 .988-.321l2.2.548a1 1 0 0 1 .725.94V19a2 2 0 0 1-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          <div><strong>Toll-Free Helpline</strong><p><a href="#">1800-123-4567</a> (24×7, all languages)</p></div>
+        </div>
+        
+        <!-- Email -->
+        <div class="office-detail" style="margin-bottom:0">
+          <svg class="ic" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 0 0 2.22 0L21 8M5 19h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2z"/></svg>
+          <div><strong>General Enquiries</strong><p><a href="#">hello@trofi.in</a></p></div>
+        </div>
+      </div>
+      
+      <div class="grievance-card" id="grievance">
+        <div class="section-tag" style="margin-bottom:14px">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align: middle; margin-right: 6px;"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          Grievance Redressal
+        </div>
+        <h3>Grievance Officer</h3>
+        <p>As per IT Act 2000 and Consumer Protection Rules 2020, TROFi has appointed a Nodal Grievance Officer:</p>
+        <p><strong>Ms. Kavitha Subramaniam</strong><br/>Nodal Grievance Officer<br/><a href="#">grievance@trofi.in</a> · 080-6600-1234<br/>(Mon–Sat, 9am–6pm IST)</p>
+        <p style="margin-top:12px;font-size:0.78rem;color:var(--gray-3)">Grievances acknowledged within 48 hours, resolved within 30 days.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="background:var(--blue);text-align:center;padding:80px 48px">
+  <div class="section-title" style="color:#fff">Still not convinced?<br/><span style="color:var(--yellow)">Try TROFi once.</span></div>
+  <p style="color:rgba(255,255,255,0.7);max-width:440px;margin:16px auto 32px;font-size:0.92rem">First ride, first food order, and first mart delivery are all free. Zero risk.</p>
+  <a href="#" class="btn btn-primary btn-lg">Download TROFi — It's Free</a>
+</div>
+
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="../assets/TROFi Logo enhanced.png" alt="TROFi"/>
+      <p>India's next-generation super-app for rides, food delivery, quick commerce, and financial services.</p>
+    </div>
+    <div class="footer-col"><h4>Services</h4><a href="ride.html">TROFi Ride</a><a href="eats.html">TROFi Eats</a><a href="mart.html">TROFi Mart</a><a href="pay.html">TROFi Pay</a></div>
+    <div class="footer-col"><h4>Company</h4><a href="about.html">About TROFi</a><a href="about.html#careers">Careers</a><a href="article-superapp.html">Blog</a></div>
+    <div class="footer-col"><h4>Partners</h4><a href="partners.html#driver">Become a Driver</a><a href="partners.html#restaurant">List Restaurant</a><a href="partners.html#store">Partner Store</a></div>
+    <div class="footer-col"><h4>Support</h4><a href="contact.html">Help Centre</a><a href="contact.html#grievance">Grievance</a><a href="#">Privacy</a><a href="#">Terms</a></div>
+  </div>
+  <div class="footer-bottom">
+  <p>© 2025 TROFi Technologies Pvt. Ltd. · Bengaluru, India</p>
+  <p>Secured & Regulated · Privacy Protected</p>
+</div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body></html>
+

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>TROFi Insights — The Rise of the Indian Super-App</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="icon" type="image/png" href="../assets/trofi-logo-transparent.png" />
+  <style>
+    .article-hero {
+      background: linear-gradient(160deg, var(--yellow) 0%, #FFE833 45%, #FFF5B0 80%, var(--white) 100%) !important;
+      padding-top: calc(var(--nav-height) + 40px) !important;
+      padding-bottom: 60px !important;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--gray-1);
+    }
+    .article-header {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px;
+      text-align: left;
+    }
+    .article-meta-top {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .article-tag-pill {
+      background: var(--blue);
+      color: #fff;
+      padding: 4px 12px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      border-radius: 100px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .article-read-time {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+    .article-title {
+      font-family: var(--font-body);
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 800;
+      color: var(--blue-dark);
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+    .article-author-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .author-img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      box-shadow: var(--shadow-sm);
+    }
+    .author-details strong {
+      display: block;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+    .author-details span {
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+
+    .article-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+    .article-banner-img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: var(--radius-xl);
+      margin-bottom: 40px;
+      box-shadow: var(--shadow-md);
+    }
+    .article-content {
+      font-size: 1.08rem;
+      line-height: 1.8;
+      color: var(--text);
+    }
+    .article-content p {
+      margin-bottom: 24px;
+    }
+    .article-content h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--blue);
+      margin-top: 40px;
+      margin-bottom: 16px;
+    }
+    .article-content blockquote {
+      border-left: 4px solid var(--yellow);
+      background: var(--off-white);
+      padding: 20px 28px;
+      font-style: italic;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: 32px 0;
+      font-size: 1.1rem;
+      color: var(--blue-dark);
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--blue);
+      margin-bottom: 24px;
+      transition: transform 0.2s;
+    }
+    .back-btn:hover {
+      transform: translateX(-4px);
+    }
+  </style>
+  <link rel="stylesheet" href="../css/responsive.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav transparent scrolled" id="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/trofi-logo-transparent.png" alt="TROFi" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="ride.html">TROFi Ride</a></li>
+        <li><a href="eats.html">TROFi Eats</a></li>
+        <li><a href="mart.html">TROFi Mart</a></li>
+        <li><a href="pay.html">TROFi Pay</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="partners.html">Partners</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="partners.html" class="btn btn-outline btn-sm">Become a Partner</a>
+        <a href="../index.html#download" class="btn btn-outline-yellow btn-sm">Get the App</a>
+      </div>
+      <button class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="ride.html">TROFi Ride</a>
+    <a href="eats.html">TROFi Eats</a>
+    <a href="mart.html">TROFi Mart</a>
+    <a href="pay.html">TROFi Pay</a>
+    <a href="about.html">About</a>
+    <a href="partners.html">Partners</a>
+    <a href="contact.html">Contact</a>
+    <a href="../index.html#download" class="btn btn-primary btn-lg" style="margin-top:24px;">Get the App</a>
+  </div>
+
+  <section class="article-hero">
+    <div class="hero-bg-doodle hero-about-doodle" aria-hidden="true"></div>
+    <div class="article-header">
+      <a href="../index.html" class="back-btn">← Back to Insights</a>
+      <div class="article-meta-top">
+        <span class="article-tag-pill">Technology</span>
+        <span class="article-read-time">5 min read · Published June 10, 2026</span>
+      </div>
+      <h1 class="article-title">The Rise of the Indian Super-App: How TROFi is Simplifying Daily Living</h1>
+      <div class="article-author-card">
+        <div class="author-img">VK</div>
+        <div class="author-details">
+          <strong>Vikram Krishnaswamy</strong>
+          <span>Co-Founder & CEO, TROFi Technologies</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-container">
+    <img class="article-banner-img" src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1200&q=80" alt="Superapp interface on mobile phone"/>
+    
+    <div class="article-content">
+      <p>Ten years ago, the word "super-app" was associated almost exclusively with WeChat in China. The western world, and much of India, relied on unbundled services—a separate application for every conceivable task. However, as smartphone memory constraints, subscription fatigue, and transactional friction began to grow, the demand for a consolidated user experience became undeniable.</p>
+      
+      <p>Today, TROFi is leading that charge in India, consolidating ride-hailing, food delivery, quick commerce, and integrated payment services into a single unified platform.</p>
+
+      <h3>Why Now? The India Super-App Catalyst</h3>
+      <p>Several factors have combined to make India the perfect market for the super-app model. Firstly, the massive growth in mobile internet connectivity has brought hundreds of millions of Tier-2 and Tier-3 citizens online. These users value simple, lightweight interfaces that don't exhaust storage space. Secondly, the widespread adoption of UPI has simplified digital transactions, clearing the way for a single integrated payments system.</p>
+      
+      <blockquote>
+        "Bharat doesn't need ten different apps with ten different loyalty systems and ten different login checks. Bharat wants one reliable, fast platform that respects their time, storage, and wallet."
+      </blockquote>
+
+      <h3>Removing Friction: One App, Zero Limits</h3>
+      <p>At TROFi, we design our platform to act as an invisible helper throughout your day. By embedding Rides, Eats, Mart, and Pay into one codebase, users experience seamless handoffs: the coins you earn from your daily commute are immediately available as a discount on your groceries or lunch, with a single wallet balance covering all transactions.</p>
+
+      <h3>Fulfilling Hyperlocal Logistics at Scale</h3>
+      <p>Behind the app is a powerful hyperlocal logistics engine. Our background-verified drivers, restaurant partners, and store operators use unified partner portals that distribute order flow efficiently, ensuring that drivers can pick up a grocery run or ride request within their immediate vicinity, maximizing their hourly earnings while reducing delivery times.</p>
+
+      <h3>Building for a Connected Future</h3>
+      <p>The super-app model is more than a convenience; it is the infrastructure for modern Indian cities. By combining transport, food, shopping, and finance, we are creating a more connected, sustainable, and inclusive digital ecosystem for all of Bharat.</p>
+    </div>
+  </div>
+
+  <footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="../assets/TROFi Logo enhanced.png" alt="TROFi"/>
+        <p>India's next-generation super-app for rides, food delivery, quick commerce, and financial services.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="ride.html">TROFi Ride</a>
+        <a href="eats.html">TROFi Eats</a>
+        <a href="mart.html">TROFi Mart</a>
+        <a href="pay.html">TROFi Pay</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About TROFi</a>
+        <a href="about.html#careers">Careers</a>
+        <a href="article-superapp.html">Blog</a>
+      </div>
+      <div class="footer-col">
+        <h4>Partners</h4>
+        <a href="partners.html#driver">Become a Driver</a>
+        <a href="partners.html#restaurant">List Restaurant</a>
+        <a href="partners.html#store">Partner Store</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="contact.html">Help Centre</a>
+        <a href="contact.html#grievance">Grievance</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 TROFi Technologies Pvt. Ltd. · Bengaluru, India</p>
+      <p>Secured & Regulated · Privacy Protected</p>
+    </div>
+  </div>
+</footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
+

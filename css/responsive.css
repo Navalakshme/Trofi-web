@@ -1,0 +1,525 @@
+/* TROFi responsive overrides loaded last on every page. */
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.nav {
+  max-width: 100vw;
+}
+
+.nav-logo img,
+.footer-brand img {
+  object-fit: contain;
+}
+
+@media (max-width: 1180px) {
+  .nav {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+
+  .nav-links a {
+    font-size: 0.86rem !important;
+    padding-left: 7px !important;
+    padding-right: 7px !important;
+  }
+
+  .nav-cta .btn-outline {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .mobile-menu {
+    display: flex !important;
+  }
+
+  .nav {
+    position: fixed !important;
+    height: 68px !important;
+    background: rgba(255, 255, 255, 0.96) !important;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(0, 84, 196, 0.08);
+    padding: 0 18px !important;
+  }
+
+  .nav.transparent:not(.scrolled) {
+    background: transparent !important;
+    border-bottom: 0 !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .nav-logo img {
+    height: 56px !important;
+    mix-blend-mode: normal !important;
+  }
+
+  .nav-links,
+  .nav-cta {
+    display: none !important;
+  }
+
+  .nav:not(:has(.hamburger)) {
+    align-items: flex-start !important;
+    padding-top: 6px !important;
+  }
+
+  .nav:not(:has(.hamburger)) .nav-links {
+    display: flex !important;
+    position: absolute;
+    left: 0 !important;
+    right: 0 !important;
+    top: 68px !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    gap: 4px !important;
+    padding: 8px 16px !important;
+    background: rgba(255, 255, 255, 0.97);
+    border-bottom: 1px solid rgba(0, 84, 196, 0.08);
+    scrollbar-width: none;
+  }
+
+  .nav:not(:has(.hamburger)) .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav:not(:has(.hamburger)) .nav-links li,
+  .nav:not(:has(.hamburger)) .nav-links a {
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+  }
+
+  body:has(.nav:not(:has(.hamburger))) .hero,
+  body:has(.nav:not(:has(.hamburger))) .page-hero {
+    padding-top: 112px !important;
+  }
+
+  .hero,
+  .page-hero {
+    min-height: auto !important;
+    padding-top: 68px !important;
+  }
+
+  .hero-grid,
+  .page-hero-grid,
+  .hero-inner,
+  .download-inner,
+  .services-grid,
+  .split,
+  .split-section,
+  .steps-split,
+  .bnpl-split,
+  .cities-inner,
+  .form-grid,
+  .two-col,
+  .pay-banner-content,
+  .service-banner-content,
+  .hero:not(#home) .hero-grid,
+  .hero:not(#home) .hero-inner {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 32px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .hero-inner {
+    padding-top: 56px !important;
+    padding-bottom: 56px !important;
+  }
+
+  .section,
+  .off-section,
+  .faq-section,
+  .testi-section,
+  .cta-section,
+  .security-section,
+  .tabs-wrapper {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .container,
+  .container-wide {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .display-hero,
+  h1,
+  .hero h1 {
+    font-size: clamp(48px, 16vw, 68px) !important;
+    line-height: 0.98 !important;
+    white-space: normal !important;
+  }
+
+  /* Eats page hero — reduce size so 2-word lines fit on one line each */
+  .hero:not(#home) .display-hero[style*="clamp(44px"] {
+    font-size: clamp(36px, 10vw, 54px) !important;
+  }
+
+  .hero-line {
+    white-space: normal !important;
+  }
+
+  .display-section,
+  .section-title,
+  .cta-band h2 {
+    font-size: clamp(34px, 11vw, 52px) !important;
+  }
+
+  .body-lg,
+  .hero-p,
+  .hero-sub,
+  .section-sub {
+    font-size: 1rem !important;
+    max-width: 100% !important;
+  }
+
+  .hero-content {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .hero-actions,
+  .hero-btns,
+  .cta-actions,
+  .app-buttons {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+  }
+
+  .hero-actions .btn,
+  .hero-btns .btn,
+  .cta-actions .btn,
+  .app-buttons .app-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center;
+    white-space: normal !important;
+  }
+
+  .hero-visual,
+  .hero-mockup,
+  .mockup-clean,
+  .hero-visual-about,
+  .hero-visual-partners {
+    order: -1 !important;
+  }
+
+  /* About page India map responsive fix */
+  .india-map-floating {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 740 / 820 !important;
+  }
+
+  /* Partners page mobile stacked layout fix */
+  .hero-visual-partners {
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+    width: 100% !important;
+    max-width: 420px !important;
+    margin: 0 auto !important;
+    gap: 16px !important;
+  }
+
+  .floating-partner-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    padding: 24px 20px !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  .hero-mockup-img,
+  .hero-mockup img,
+  .mockup-clean,
+  .mockup-clean img {
+    width: min(220px, 60vw) !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .hero-floating-cards {
+    display: block !important;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 10 !important;
+  }
+
+  .float-card {
+    display: flex !important;
+    position: absolute !important;
+    padding: 6px 10px !important;
+    font-size: 0.7rem !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 16px rgba(0, 84, 196, 0.12) !important;
+    max-width: 130px !important;
+    white-space: normal !important;
+    z-index: 10 !important;
+  }
+
+  .float-card strong {
+    font-size: 0.72rem !important;
+  }
+
+  .float-card small {
+    display: none !important;
+  }
+
+  .float-card .float-icon {
+    font-size: 18px !important;
+  }
+
+  .float-card-1 {
+    top: 10% !important;
+    left: -130px !important;
+    right: auto !important;
+    animation: float1 4s ease-in-out infinite !important;
+  }
+
+  .float-card-2 {
+    top: 32% !important;
+    right: -130px !important;
+    left: auto !important;
+    animation: float3 4.5s ease-in-out infinite !important;
+  }
+
+  .float-card-3 {
+    top: 55% !important;
+    left: -130px !important;
+    right: auto !important;
+    animation: float2 5s ease-in-out infinite !important;
+  }
+
+  .float-card-4 {
+    top: 77% !important;
+    right: -130px !important;
+    left: auto !important;
+    animation: float1 4.8s ease-in-out infinite !important;
+  }
+
+  .stats-inner,
+  .stats-row,
+  .core-feats,
+  .features-grid-2,
+  .features-grid-3,
+  .ride-types,
+  .cuisine-grid,
+  .category-grid,
+  .testi-grid,
+  .testimonials-grid,
+  .blog-grid,
+  .partner-grid,
+  .channels,
+  .help-topics,
+  .benefits-grid,
+  .earnings-grid,
+  .sec-grid,
+  .team-grid,
+  .values-grid,
+  .mission-nums,
+  .pay-banner-features,
+  .service-banner-features {
+    grid-template-columns: 1fr !important;
+  }
+
+  .services-right-col {
+    flex-direction: column !important;
+  }
+
+  .service-card-hero-img,
+  .mockup-img-wrap.service-card-hero-img {
+    height: auto !important;
+    min-height: 260px;
+  }
+
+  .service-card-hero-img.small,
+  .mockup-img-wrap.service-card-hero-img.small {
+    height: auto !important;
+    min-height: 220px;
+  }
+
+  .split-img img,
+  .steps-img img,
+  .bnpl-img img {
+    height: auto !important;
+    max-height: 360px;
+  }
+
+  .cta-band,
+  .earnings-card,
+  .superpass-card,
+  .pay-banner,
+  .service-banner,
+  .office-card,
+  .grievance-card {
+    border-radius: 20px !important;
+    padding: 32px 22px !important;
+  }
+
+  .tabs {
+    width: 100% !important;
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+
+  .tab {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  .footer {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+
+  .footer-bottom {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .container,
+  .container-wide,
+  .section,
+  .off-section,
+  .faq-section,
+  .testi-section,
+  .cta-section,
+  .security-section,
+  .tabs-wrapper {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .hero-grid,
+  .page-hero-grid,
+  .hero-inner,
+  .download-inner,
+  .split,
+  .steps-split,
+  .bnpl-split,
+  .form-grid,
+  .two-col {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .hero-content,
+  .display-hero,
+  .hero-sub,
+  .hero-actions {
+    max-width: calc(100vw - 32px) !important;
+  }
+
+  .hero-stats-inner {
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  .stat-divider {
+    display: none !important;
+  }
+
+  .compare-wrapper {
+    overflow-x: auto;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .compare-table {
+    min-width: 680px;
+  }
+
+  .download-perks,
+  .hero-badges,
+  .hero-badges,
+  .hero-stats {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .section-header-row {
+    align-items: stretch !important;
+  }
+
+  .section-header-row .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-mockup-img,
+  .hero-mockup img,
+  .mockup-clean,
+  .mockup-clean img {
+    width: 160px !important;
+  }
+
+  .float-card {
+    max-width: 95px !important;
+    padding: 4px 6px !important;
+    font-size: 0.62rem !important;
+    border-radius: 8px !important;
+  }
+
+  .float-card strong {
+    font-size: 0.65rem !important;
+  }
+
+  .float-card .float-icon {
+    font-size: 14px !important;
+  }
+
+  .float-card-1 {
+    left: -80px !important;
+    right: auto !important;
+  }
+
+  .float-card-2 {
+    right: -80px !important;
+    left: auto !important;
+  }
+
+  .float-card-3 {
+    left: -80px !important;
+    right: auto !important;
+  }
+
+  .float-card-4 {
+    right: -80px !important;
+    left: auto !important;
+  }
+}

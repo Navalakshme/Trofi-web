@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>TROFi Eats — Restaurant Quality, Doorstep Speed, Exact Need</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="icon" type="image/png" href="../assets/trofi-logo-transparent.png" />
+<style>
+:root{--orange:var(--blue)}
+.btn-orange{background:var(--orange);color:#fff}
+.btn-orange:hover{background:var(--blue-dark);transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+
+.hero-p{font-size:1.15rem;color:var(--text);opacity:0.85;margin-bottom:28px;line-height:1.65;max-width:540px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+
+/* HERO MOCKUP — no shadow, no bg */
+.hero-mockup{display:flex;justify-content:center;align-items:center}
+.hero-mockup img{
+  width:380px;height:auto;
+  object-fit:contain;
+  background:transparent;
+  box-shadow:none;
+  filter:none;
+  display:block;
+  animation:floatPhone 6s ease-in-out infinite;
+}
+
+@keyframes floatPhone {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+/* STATS */
+.stats-bar{background:var(--orange);padding:32px 48px}
+.stats-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:900px;margin:0 auto}
+.stat-card{background:#fff;border-radius:var(--radius-lg);padding:28px 20px;text-align:center;border-top:3px solid var(--orange)}
+.stat-num{font-family:var(--font-display);font-size:48px;color:var(--orange);line-height:1}
+.stat-lbl{font-size:0.72rem;font-weight:600;color:var(--gray-3);text-transform:uppercase;letter-spacing:0.06em;margin-top:6px}
+
+/* CUISINES */
+.section{padding:80px 48px}
+.section-label2{display:inline-flex;padding:5px 12px;background:rgba(0,84,196,0.08);border-radius:100px;color:var(--orange);font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:14px}
+.section-title{font-family:var(--font-display);font-size:clamp(36px,5vw,60px);letter-spacing:0.02em;margin-bottom:10px}
+.section-sub{font-size:1rem;color:var(--text-light);max-width:460px;line-height:1.6;margin-bottom:48px}
+.cuisine-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.cuisine-card{border-radius:var(--radius-lg);overflow:hidden;position:relative;height:140px;cursor:pointer;box-shadow:var(--shadow-sm);transition:transform 0.3s ease, box-shadow 0.3s ease}
+.cuisine-card img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s ease}
+.cuisine-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.cuisine-card:hover img{transform:scale(1.08)}
+.cuisine-card span{position:absolute;bottom:0;left:0;right:0;padding:12px 14px;background:linear-gradient(to top,rgba(0,20,40,0.85),transparent);color:#fff;font-weight:700;font-size:0.85rem;text-align:left}
+
+/* WHY TROFI EATS */
+.off-section{background:var(--off-white);padding:80px 48px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.split-img{border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-lg)}
+.split-img img{width:100%;height:440px;object-fit:cover}
+.steps-list{display:flex;flex-direction:column;gap:0;margin-top:28px}
+.step{display:flex;gap:20px;padding-bottom:28px;position:relative}
+.step:not(:last-child)::before{content:'';position:absolute;left:19px;top:44px;bottom:0;width:2px;background:linear-gradient(to bottom,var(--orange),transparent);opacity:0.25}
+.step-num{width:40px;height:40px;border-radius:50%;background:var(--orange);color:#fff;font-family:var(--font-display);font-size:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.step h4{font-size:1rem;font-weight:700;margin-bottom:5px}
+.step p{font-size:0.88rem;color:var(--text-light);line-height:1.6}
+.eats-compare-img-container {
+  box-shadow: none !important;
+  background: transparent !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+.eats-compare-img-container img {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: contain !important;
+}
+
+/* TESTIMONIALS */
+.testi-section{padding:80px 48px}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.testi-card{background:#fff;border-radius:var(--radius-lg);padding:32px;box-shadow:var(--shadow-md);position:relative}
+.testi-card::before{content:'"';font-family:var(--font-display);font-size:80px;color:var(--orange);position:absolute;top:12px;left:20px;line-height:1;opacity:0.4}
+.stars{color:#FFB800;font-size:1rem;letter-spacing:2px;margin-bottom:8px}
+.testi-card p{font-size:0.92rem;line-height:1.7;color:var(--text);margin-top:28px;margin-bottom:20px}
+.testi-author{display:flex;align-items:center;gap:12px;padding-top:16px;border-top:1px solid var(--gray-1)}
+.avatar{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:16px;color:#fff;flex-shrink:0}
+.author-name{font-size:0.9rem;font-weight:700}
+.author-info{font-size:0.75rem;color:var(--gray-3)}
+
+/* CTA */
+.cta-section{padding:80px 48px}
+.cta-band{background:linear-gradient(135deg,var(--blue-dark),var(--blue));border-radius:var(--radius-xl);padding:60px;text-align:center}
+.cta-band h2{font-family:var(--font-display);font-size:clamp(36px,4vw,60px);color:#fff;margin-bottom:14px}
+.cta-band p{color:rgba(255,255,255,0.75);max-width:460px;margin:0 auto 32px;font-size:0.95rem}
+.cta-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+/* FOOTER */
+.footer{background:#0A0A0F;padding:56px 48px 24px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.footer-brand img{height:64px;margin-bottom:14px}
+.footer-brand p{color:rgba(255,255,255,0.5);font-size:0.85rem;line-height:1.7;max-width:240px;margin-top:10px}
+.footer-col h4{font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--yellow);margin-bottom:16px}
+.footer-col a{display:block;font-size:0.85rem;color:rgba(255,255,255,0.5);margin-bottom:8px}
+.footer-bottom{padding-top:20px;display:flex;justify-content:space-between}
+.footer-bottom p{font-size:0.78rem;color:rgba(255,255,255,0.3)}
+</style>
+<link rel="stylesheet" href="../css/responsive.css" />
+</head>
+<body>
+
+<nav class="nav transparent" id="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">
+      <img src="../assets/trofi-logo-transparent.png" alt="TROFi" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="ride.html">TROFi Ride</a></li>
+      <li><a href="#" class="active">TROFi Eats</a></li>
+      <li><a href="mart.html">TROFi Mart</a></li>
+      <li><a href="pay.html">TROFi Pay</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="partners.html">Partners</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="partners.html#restaurant" class="btn btn-outline btn-sm">List Restaurant</a>
+      <a href="../index.html#download" class="btn btn-outline-yellow btn-sm">Get the App</a>
+    </div>
+    <button class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu">
+  <a href="../index.html">Home</a>
+  <a href="ride.html">TROFi Ride</a>
+  <a href="eats.html">TROFi Eats</a>
+  <a href="mart.html">TROFi Mart</a>
+  <a href="pay.html">TROFi Pay</a>
+  <a href="about.html">About</a>
+  <a href="partners.html">Partners</a>
+  <a href="contact.html">Contact</a>
+  <a href="../index.html#download" class="btn btn-primary btn-lg" style="margin-top:24px;">Get the App</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-doodle hero-eats-doodle" aria-hidden="true"></div>
+  <div class="hero-grid">
+    <div>
+      <nav class="breadcrumb fade-up"><a href="../index.html">Home</a> › <span style="color:var(--orange)">TROFi Eats</span></nav>
+      <div class="hero-tag fade-up">🍔 TROFi Eats</div>
+      <h1 class="display-hero fade-up delay-1" style="font-size:clamp(44px,8vw,90px);">Restaurant Quality,<br/><span>Doorstep Speed,</span><br/>Exact Need!</h1>
+      <p class="hero-p fade-up delay-2">1,000+ restaurant partners. Hot food in 30 minutes or it's on us. Live tracking from kitchen to your door.</p>
+      <div class="hero-btns fade-up delay-3">
+        <a href="#" class="btn btn-orange btn-lg">Order Food Now →</a>
+        <a href="partners.html#restaurant" class="btn btn-outline btn-lg">List Your Restaurant</a>
+      </div>
+    </div>
+    <div class="hero-mockup slide-right delay-2">
+      <img src="../assets/mockup-restaurant.png" alt="TROFi Eats App"/>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-card"><div class="stat-num">1000+</div><div class="stat-lbl">Restaurant Partners</div></div>
+    <div class="stat-card"><div class="stat-num">30 min</div><div class="stat-lbl">Average Delivery</div></div>
+    <div class="stat-card"><div class="stat-num">500K+</div><div class="stat-lbl">Orders Per Day</div></div>
+    <div class="stat-card"><div class="stat-num">4.8★</div><div class="stat-lbl">Average Rating</div></div>
+  </div>
+</div>
+
+<!-- CUISINES -->
+<div class="section">
+  <div class="section-label2 fade-up">What's on the Menu</div>
+  <div class="section-title fade-up">Every Craving, Satisfied.</div>
+  <p class="section-sub fade-up delay-1">From biryani to burgers, from South Indian thali to continental — browse by cuisine or restaurant.</p>
+  <div class="cuisine-grid">
+    <div class="cuisine-card fade-up"><img src="../assets/north-indian.png" alt="North Indian"/><span>North Indian</span></div>
+    <div class="cuisine-card fade-up delay-1"><img src="https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=600&q=80" alt="South Indian"/><span>South Indian</span></div>
+    <div class="cuisine-card fade-up delay-2"><img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&q=80" alt="Pizza"/><span>Pizza</span></div>
+    <div class="cuisine-card fade-up delay-3"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80" alt="Burgers"/><span>Burgers</span></div>
+    <div class="cuisine-card fade-up"><img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?w=600&q=80" alt="Chinese"/><span>Chinese</span></div>
+    <div class="cuisine-card fade-up delay-1"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80" alt="Healthy"/><span>Healthy</span></div>
+    <div class="cuisine-card fade-up delay-2"><img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?w=600&q=80" alt="Desserts"/><span>Desserts</span></div>
+    <div class="cuisine-card fade-up delay-3"><img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?w=600&q=80" alt="Beverages"/><span>Beverages</span></div>
+    <div class="cuisine-card fade-up"><img src="../assets/bakery.png" alt="Bakery"/><span>Bakery</span></div>
+    <div class="cuisine-card fade-up delay-1"><img src="https://tse4.mm.bing.net/th/id/OIP.-bFKKP5k4cO8Y7H9tYpkzAHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Street Food"/><span>Street Food</span></div>
+    <div class="cuisine-card fade-up delay-2"><img src="https://images.unsplash.com/photo-1633945274405-b6c8069047b0?w=600&q=80" alt="Biryani"/><span>Biryani</span></div>
+    <div class="cuisine-card fade-up delay-3"><img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=600&q=80" alt="Japanese"/><span>Japanese</span></div>
+  </div>
+</div>
+
+<!-- WHY TROFI EATS -->
+<div class="off-section">
+  <div class="split">
+    <div class="slide-left">
+      <div class="section-label2">TROFi Eats Advantage</div>
+      <div class="section-title">Why We Beat Competitor 1 & Competitor 2</div>
+      <div class="steps-list">
+        <div class="step"><div class="step-num">⏱</div><div><h4>30-Minute Guarantee</h4><p>If your food arrives late, you get ₹50 in TROFi Coins automatically. No questions asked.</p></div></div>
+        <div class="step"><div class="step-num">🌡</div><div><h4>Hot Bag Technology</h4><p>All TROFi Eats partners use insulated smart-lock bags that keep food at serving temperature.</p></div></div>
+        <div class="step"><div class="step-num">📦</div><div><h4>Live Kitchen Tracking</h4><p>See exactly when your order is being prepared, packed and dispatched — not just estimated times.</p></div></div>
+        <div class="step"><div class="step-num">💰</div><div><h4>No Hidden Charges</h4><p>The price you see is the price you pay. Zero platform fee, transparent packaging and delivery costs.</p></div></div>
+      </div>
+    </div>
+    <div class="split-img eats-compare-img-container slide-right">
+      <img src="../assets/how-it-works-flow.jpg" alt="Why We Beat Competitors"/>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="testi-section">
+  <div style="text-align:center" class="fade-up">
+    <div class="section-label2" style="margin:0 auto 14px">Reviews</div>
+    <div class="section-title">What Foodies Say</div>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card fade-up">
+      <div class="stars">★★★★★</div>
+      <p>"The biryani arrived in 26 minutes and was hotter than what I get eating in the restaurant. TROFi Eats genuinely cares about food quality."</p>
+      <div class="testi-author">
+        <div class="avatar" style="background:linear-gradient(135deg,var(--blue),#1A7AE8)">VL</div>
+        <div><div class="author-name">Vidya Lakshmi</div><div class="author-info">Food blogger · Bengaluru</div></div>
+      </div>
+    </div>
+    <div class="testi-card fade-up delay-1">
+      <div class="stars">★★★★★</div>
+      <p>"Finally an app with no surprise platform fee at checkout. What I see is what I pay. The live kitchen tracking is addictive — I watched my dosa being made!"</p>
+      <div class="testi-author">
+        <div class="avatar" style="background:linear-gradient(135deg,#0054C4,#1A7AE8)">SM</div>
+        <div><div class="author-name">Siddharth Menon</div><div class="author-info">Tech Lead · Hyderabad</div></div>
+      </div>
+    </div>
+    <div class="testi-card fade-up delay-2">
+      <div class="stars">★★★★★</div>
+      <p>"Competitor 2 membership felt like a scam after I tried SuperPass. Unlimited free delivery and I earn Ride coins when I order food? My evening commute is now basically free."</p>
+      <div class="testi-author">
+        <div class="avatar" style="background:linear-gradient(135deg,var(--blue),#1A7AE8)">DP</div>
+        <div><div class="author-name">Deepika Patil</div><div class="author-info">HR Manager · Pune</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section fade-up">
+  <div class="cta-band">
+    <div style="display:inline-flex;padding:4px 14px;background:rgba(255,221,0,0.2);border-radius:100px;color:var(--yellow);font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:18px">🍔 First Order Free</div>
+    <h2>Your First Order is <span style="color:var(--yellow)">on Us.</span></h2>
+    <p>Use code <strong style="color:var(--yellow)">EAT1FREE</strong> on your first TROFi Eats order. Free delivery, no minimum order value.</p>
+    <div class="cta-actions">
+      <a href="#" class="btn btn-primary btn-lg">Download TROFi</a>
+      <a href="partners.html#restaurant" class="btn btn-outline-white btn-lg">List Your Restaurant</a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="../assets/TROFi Logo enhanced.png" alt="TROFi"/>
+      <p>India's next-generation super-app for rides, food delivery, quick commerce, and financial services.</p>
+    </div>
+    <div class="footer-col"><h4>Services</h4><a href="ride.html">TROFi Ride</a><a href="eats.html">TROFi Eats</a><a href="mart.html">TROFi Mart</a><a href="pay.html">TROFi Pay</a></div>
+    <div class="footer-col"><h4>Company</h4><a href="about.html">About TROFi</a><a href="about.html#careers">Careers</a><a href="article-superapp.html">Blog</a></div>
+    <div class="footer-col"><h4>Partners</h4><a href="partners.html#driver">Become a Driver</a><a href="partners.html#restaurant">List Restaurant</a><a href="partners.html#store">Partner Store</a></div>
+    <div class="footer-col"><h4>Support</h4><a href="contact.html">Help Centre</a><a href="contact.html#grievance">Grievance</a><a href="#">Privacy</a><a href="#">Terms</a></div>
+  </div>
+  <div class="footer-bottom">
+  <p>© 2025 TROFi Technologies Pvt. Ltd. · Bengaluru, India</p>
+  <p>Secured & Regulated · Privacy Protected</p>
+</div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body></html>
+

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>About TROFi — Our Story, Mission & Team</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="icon" type="image/png" href="../assets/trofi-logo-transparent.png" />
+<style>
+
+
+
+/* COMMON SECTIONS */
+.section{padding:80px 48px}
+.off-section{background:var(--off-white);padding:80px 48px}
+.section-tag{display:inline-flex;padding:5px 12px;background:rgba(0,84,196,0.08);border-radius:100px;color:var(--blue);font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:14px}
+.section-title{font-family:var(--font-display);font-size:clamp(36px,5vw,60px);letter-spacing:0.02em;margin-bottom:12px;line-height:1.05}
+.section-sub{font-size:0.95rem;color:var(--text-light);max-width:480px;line-height:1.65;margin-bottom:40px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.split-img{border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-lg)}
+.split-img img{width:100%;height:440px;object-fit:cover}
+
+/* MOCKUP — clean no shadow */
+.mockup-clean img{width:100%;height:auto;object-fit:contain;border-radius:44px;background:transparent;box-shadow:none;filter:none;display:block}
+
+/* FEATURE CARDS */
+.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+.feat-item{padding:18px;background:#fff;border-radius:var(--radius-md);box-shadow:var(--shadow-sm)}
+.feat-item .icon{font-size:24px;margin-bottom:8px}
+.feat-item strong{font-size:0.88rem;display:block;margin-bottom:4px}
+.feat-item p{font-size:0.8rem;color:var(--text-light);line-height:1.5}
+
+/* STATS ROW */
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:960px;margin:0 auto}
+.stat-card{background:#fff;border-radius:var(--radius-lg);padding:28px 20px;text-align:center;border-top:3px solid var(--yellow)}
+.stat-num{font-family:var(--font-display);font-size:48px;line-height:1}
+.stat-lbl{font-size:0.7rem;font-weight:600;color:var(--gray-3);text-transform:uppercase;letter-spacing:0.06em;margin-top:6px}
+
+/* STEPS */
+.step{display:flex;gap:18px;padding-bottom:28px;position:relative}
+.step:not(:last-child)::before{content:'';position:absolute;left:19px;top:44px;bottom:0;width:2px;background:linear-gradient(to bottom,var(--blue),transparent);opacity:0.2}
+.step-num{width:40px;height:40px;border-radius:50%;background:var(--blue);color:#fff;font-family:var(--font-display);font-size:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 16px rgba(0,84,196,0.3)}
+.step h4{font-size:0.95rem;font-weight:700;margin-bottom:5px}
+.step p{font-size:0.85rem;color:var(--text-light);line-height:1.6}
+
+/* CTA BAND */
+.cta-band{border-radius:var(--radius-xl);padding:60px;text-align:center;position:relative;overflow:hidden}
+.cta-band h2{font-family:var(--font-display);font-size:clamp(36px,4vw,56px);color:#fff;margin-bottom:14px}
+.cta-band p{color:rgba(255,255,255,0.72);max-width:460px;margin:0 auto 32px;font-size:0.92rem}
+.cta-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+/* FOOTER */
+.footer{background:#0A0A0F;padding:56px 48px 24px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.footer-brand img{height:64px;margin-bottom:14px}
+.footer-brand p{color:rgba(255,255,255,0.5);font-size:0.85rem;line-height:1.7;max-width:240px;margin-top:10px}
+.footer-col h4{font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--yellow);margin-bottom:14px}
+.footer-col a{display:block;font-size:0.82rem;color:rgba(255,255,255,0.5);margin-bottom:8px}
+.footer-bottom{padding-top:20px;display:flex;justify-content:space-between}
+.footer-bottom p{font-size:0.75rem;color:rgba(255,255,255,0.3)}
+
+
+.hero-p{font-size:1.15rem;color:var(--text);opacity:0.85;max-width:580px;line-height:1.65}
+.hero-about-doodle {
+  background-image: url('../assets/about_doodle_bg.png');
+}
+.hero-visual-about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.india-map-floating {
+  width: 740px;
+  height: 820px;
+  position: relative;
+  max-width: 100%;
+  animation: floatPhone 6s ease-in-out infinite;
+}
+.india-map-interactive {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.india-map-base {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 32px rgba(0,84,196,0.15));
+}
+.city-node {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+.city-name {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--blue-dark);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 84, 196, 0.15);
+  white-space: nowrap;
+  box-shadow: var(--shadow-sm);
+}
+.pulse-dot-small {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+}
+.pulse-dot-small::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--blue);
+  animation: pulse-ring 2s ease-out infinite;
+}
+.pulse-dot-small::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  border-radius: 50%;
+  background: var(--blue);
+}
+.value-icon-img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  margin-bottom: 20px;
+  display: block;
+  box-shadow: var(--shadow-sm);
+}
+.simplify-life-img-container {
+  box-shadow: none !important;
+  background: transparent !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+.simplify-life-img-container img {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: contain !important;
+}
+@keyframes floatPhone {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-16px) rotate(0.5deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px}
+.team-card{text-align:center;background:#fff;border-radius:var(--radius-lg);padding:36px 24px 28px;box-shadow:var(--shadow-sm)}
+.team-avatar{width:80px;height:80px;border-radius:50%;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:28px;color:#fff}
+.team-card h4{font-size:1rem;font-weight:700;margin-bottom:4px}
+.team-role{font-size:0.8rem;color:var(--gray-3);margin-bottom:10px}
+.team-bio{font-size:0.8rem;color:var(--text-light);line-height:1.55}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.value-card{background:#fff;border-radius:var(--radius-lg);padding:32px;box-shadow:var(--shadow-sm);border-bottom:3px solid var(--blue)}
+.value-icon{font-size:32px;margin-bottom:16px}
+.value-card h3{font-size:1rem;font-weight:700;margin-bottom:10px}
+.value-card p{font-size:0.85rem;color:var(--text-light);line-height:1.6}
+.mission-nums{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px}
+.mission-num{text-align:center;padding:24px;background:var(--off-white);border-radius:var(--radius-lg)}
+.mission-num .n{font-family:var(--font-display);font-size:44px;color:var(--blue)}
+.mission-num .l{font-size:0.8rem;color:var(--text-light);margin-top:4px}
+</style>
+<link rel="stylesheet" href="../css/responsive.css" />
+</head><body>
+
+
+<nav class="nav transparent" id="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">
+      <img src="../assets/trofi-logo-transparent.png" alt="TROFi" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="ride.html">TROFi Ride</a></li>
+      <li><a href="eats.html">TROFi Eats</a></li>
+      <li><a href="mart.html">TROFi Mart</a></li>
+      <li><a href="pay.html">TROFi Pay</a></li>
+      <li><a href="#" class="active">About</a></li>
+      <li><a href="partners.html">Partners</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="partners.html" class="btn btn-outline btn-sm">Become a Partner</a>
+      <a href="../index.html#download" class="btn btn-outline-yellow btn-sm">Get the App</a>
+    </div>
+    <button class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu">
+  <a href="../index.html">Home</a>
+  <a href="ride.html">TROFi Ride</a>
+  <a href="eats.html">TROFi Eats</a>
+  <a href="mart.html">TROFi Mart</a>
+  <a href="pay.html">TROFi Pay</a>
+  <a href="about.html">About</a>
+  <a href="partners.html">Partners</a>
+  <a href="contact.html">Contact</a>
+  <a href="../index.html#download" class="btn btn-primary btn-lg" style="margin-top:24px;">Get the App</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-doodle hero-about-doodle" aria-hidden="true"></div>
+  <div class="hero-grid">
+    <div>
+      <nav class="breadcrumb fade-up"><a href="../index.html">Home</a> › <span style="color:var(--blue-dark)">About TROFi</span></nav>
+      <div class="hero-tag fade-up"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 6px;"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>Our Story</div>
+      <h1 class="display-hero fade-up delay-1">Built For<br/><span>Bharat.</span><br/>Built With<br/>Purpose.</h1>
+      <p class="hero-p fade-up delay-2">TROFi was born in a Bengaluru apartment in 2023 with one obsession: why do Indians need five apps to get through a single day? We set out to build one — and build it right.</p>
+    </div>
+    <div class="hero-visual-about slide-right delay-2">
+      <div class="india-map-floating">
+        <div class="india-map-interactive">
+          <img class="india-map-base" src="../assets/india-map-outline-clean.png" alt="India Map"/>
+          
+          <!-- Delhi -->
+          <div class="city-node" style="top: 25%; left: 40%;">
+            <div class="pulse-dot"></div>
+            <span class="city-name">Delhi</span>
+          </div>
+          
+          <!-- Chandigarh -->
+          <div class="city-node" style="top: 16%; left: 37%;">
+            <div class="pulse-dot-small"></div>
+            <span class="city-name">Chandigarh</span>
+          </div>
+          
+          <!-- Jaipur -->
+          <div class="city-node" style="top: 36%; left: 31%;">
+            <div class="pulse-dot-small"></div>
+            <span class="city-name">Jaipur</span>
+          </div>
+          
+          <!-- Ahmedabad -->
+          <div class="city-node" style="top: 48%; left: 25%;">
+            <div class="pulse-dot-small"></div>
+            <span class="city-name">Ahmedabad</span>
+          </div>
+          
+          <!-- Mumbai -->
+          <div class="city-node" style="top: 55%; left: 24%;">
+            <div class="pulse-dot"></div>
+            <span class="city-name">Mumbai</span>
+          </div>
+          
+          <!-- Pune -->
+          <div class="city-node" style="top: 59%; left: 29%;">
+            <div class="pulse-dot-small"></div>
+            <span class="city-name">Pune</span>
+          </div>
+          
+          <!-- Bengaluru -->
+          <div class="city-node" style="top: 76%; left: 42%;">
+            <div class="pulse-dot"></div>
+            <span class="city-name">Bengaluru</span>
+          </div>
+          
+          <!-- Kochi -->
+          <div class="city-node" style="top: 86%; left: 39%;">
+            <div class="pulse-dot-small"></div>
+            <span class="city-name">Kochi</span>
+          </div>
+          
+          <!-- Chennai -->
+          <div class="city-node" style="top: 79%; left: 47%;">
+            <div class="pulse-dot"></div>
+            <span class="city-name">Chennai</span>
+          </div>
+          
+          <!-- Hyderabad -->
+          <div class="city-node" style="top: 64%; left: 45%;">
+            <div class="pulse-dot-small"></div>
+            <span class="city-name">Hyderabad</span>
+          </div>
+          
+          <!-- Lucknow -->
+          <div class="city-node" style="top: 32%; left: 52%;">
+            <div class="pulse-dot-small"></div>
+            <span class="city-name">Lucknow</span>
+          </div>
+          
+          <!-- Kolkata -->
+          <div class="city-node" style="top: 48%; left: 74%;">
+            <div class="pulse-dot"></div>
+            <span class="city-name">Kolkata</span>
+          </div>
+
+          <!-- Guwahati -->
+          <div class="city-node" style="top: 42%; left: 88%;">
+            <div class="pulse-dot-small"></div>
+            <span class="city-name">Guwahati</span>
+          </div>
+
+          <!-- Surat -->
+          <div class="city-node" style="top: 50%; left: 21%;">
+            <div class="pulse-dot-small"></div>
+            <span class="city-name">Surat</span>
+          </div>
+
+          <!-- Indore -->
+          <div class="city-node" style="top: 47%; left: 37%;">
+            <div class="pulse-dot-small"></div>
+            <span class="city-name">Indore</span>
+          </div>
+
+          <!-- Patna -->
+          <div class="city-node" style="top: 36%; left: 63%;">
+            <div class="pulse-dot-small"></div>
+            <span class="city-name">Patna</span>
+          </div>
+
+          <!-- Visakhapatnam -->
+          <div class="city-node" style="top: 67%; left: 52%;">
+            <div class="pulse-dot-small"></div>
+            <span class="city-name">Visakhapatnam</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section">
+  <div class="split">
+    <div>
+      <div class="section-tag">Our Mission</div>
+      <div class="section-title">Simplify Life<br/>for <span style="color:var(--blue)">Every Indian.</span></div>
+      <p style="color:var(--text-light);font-size:0.92rem;line-height:1.7;margin:16px 0">India is a country of 1.4 billion stories — each one different, each one busy. We built TROFi to be the invisible layer that makes modern Indian life frictionless. One app. One wallet. One loyalty programme.</p>
+      <p style="color:var(--text-light);font-size:0.92rem;line-height:1.7">The whale in our logo represents scale, intelligence, and the determination to move mountains — or in our case, traffic jams, cold meals, and complicated payment flows.</p>
+      <div class="mission-nums">
+        <div class="mission-num"><div class="n">2023</div><div class="l">Founded in Bengaluru</div></div>
+        <div class="mission-num"><div class="n">₹480Cr</div><div class="l">Series A Funding Raised</div></div>
+      </div>
+    </div>
+    <div class="simplify-life-img-container">
+      <img src="../assets/simplify-life.jpg" alt="Simplify Life for Every Indian"/>
+    </div>
+  </div>
+</div>
+
+<div class="off-section">
+  <div style="text-align:center">
+    <div class="section-tag" style="margin:0 auto 14px">Leadership</div>
+    <div class="section-title">The <span style="color:var(--blue)">Builders</span></div>
+  </div>
+  <div class="team-grid">
+    <div class="team-card">
+      <div class="team-avatar" style="background:linear-gradient(135deg,var(--blue),#1A7AE8)">VK</div>
+      <h4>Vikram Krishnaswamy</h4><div class="team-role">Co-Founder & CEO</div>
+      <p class="team-bio">Ex-mobility lead, IIT Bombay. Built mobility products used by 30M+ users. Obsessed with hyperlocal supply chains.</p>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar" style="background:linear-gradient(135deg,var(--blue),#1A7AE8)">AS</div>
+      <h4>Ananya Sharma</h4><div class="team-role">Co-Founder & COO</div>
+      <p class="team-bio">Ex-food delivery director of operations. ISB Hyderabad. Scaled restaurant partnerships from 0 to 50K+.</p>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar" style="background:linear-gradient(135deg,var(--blue),#1A7AE8)">RN</div>
+      <h4>Rahul Nair</h4><div class="team-role">Chief Technology Officer</div>
+      <p class="team-bio">Ex-Amazon India, Stanford CS. Architect of TROFi's AI-powered logistics and dark store systems.</p>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar" style="background:linear-gradient(135deg,var(--blue),#1A7AE8);color:#fff">PM</div>
+      <h4>Preethi Mahesh</h4><div class="team-role">Chief Financial Officer</div>
+      <p class="team-bio">Ex-Paytm VP Finance. CA + MBA. Oversaw ₹2,000Cr in fintech transactions. Architect of TROFi Pay.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div style="text-align:center">
+    <div class="section-tag" style="margin:0 auto 14px">Culture</div>
+    <div class="section-title">What We <span style="color:var(--blue)">Stand For</span></div>
+  </div>
+  <div class="values-grid">
+    <div class="value-card">
+      <img class="value-icon-img" src="../assets/about-value-speed.png" alt="Speed Over Perfection" style="object-fit:contain; background:transparent;"/>
+      <h3>Speed Over Perfection</h3>
+      <p>We ship fast, learn faster. Perfect is the enemy of delivered. Every day without TROFi is a day someone's commute suffered.</p>
+    </div>
+    <div class="value-card">
+      <img class="value-icon-img" src="../assets/about-value-partners.png" alt="Partners First" style="object-fit:contain; background:transparent;"/>
+      <h3>Partners First</h3>
+      <p>Our drivers, restaurant owners, and store partners aren't vendors — they're co-builders. TROFi only wins if they win first.</p>
+    </div>
+    <div class="value-card">
+      <img class="value-icon-img" src="../assets/about-value-bharat.png" alt="Built for Bharat" style="object-fit:contain; background:transparent;"/>
+      <h3>Built for Bharat</h3>
+      <p>Not Silicon Valley. TROFi is built with ruthless focus on what works for real Indians in real cities.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="background:var(--dark)" id="careers">
+  <div class="cta-band" style="background:transparent;border:1px solid rgba(255,255,255,0.1)">
+    <div style="display:inline-flex;align-items:center;padding:6px 14px;background:rgba(255,221,0,0.15);border-radius:100px;color:var(--yellow);font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:18px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align: middle; margin-right: 6px;"><path d="M4.5 16.5c-1.5 1.5-2.5 3.5-2.5 5.5C4 22 6 21 7.5 19.5l12-12L16.5 4.5l-12 12z"/><path d="M12 9l6-6M9 12l-6 6M19 5l.01-.01"/></svg>We're Hiring</div>
+    <h2>Join the <span style="color:var(--yellow)">TROFi Mission.</span></h2>
+    <p>We're building a 500-person team across engineering, product, operations, and marketing.</p>
+    <div class="cta-actions">
+      <a href="#" class="btn btn-primary btn-lg">View Open Roles →</a>
+      <a href="#" class="btn btn-outline-white btn-lg">Send Your CV</a>
+    </div>
+  </div>
+</div>
+
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="../assets/TROFi Logo enhanced.png" alt="TROFi"/>
+      <p>India's next-generation super-app for rides, food delivery, quick commerce, and financial services.</p>
+    </div>
+    <div class="footer-col"><h4>Services</h4><a href="ride.html">TROFi Ride</a><a href="eats.html">TROFi Eats</a><a href="mart.html">TROFi Mart</a><a href="pay.html">TROFi Pay</a></div>
+    <div class="footer-col"><h4>Company</h4><a href="about.html">About TROFi</a><a href="about.html#careers">Careers</a><a href="article-superapp.html">Blog</a></div>
+    <div class="footer-col"><h4>Partners</h4><a href="partners.html#driver">Become a Driver</a><a href="partners.html#restaurant">List Restaurant</a><a href="partners.html#store">Partner Store</a></div>
+    <div class="footer-col"><h4>Support</h4><a href="contact.html">Help Centre</a><a href="contact.html#grievance">Grievance</a><a href="#">Privacy</a><a href="#">Terms</a></div>
+  </div>
+  <div class="footer-bottom">
+  <p>© 2025 TROFi Technologies Pvt. Ltd. · Bengaluru, India</p>
+  <p>Secured & Regulated · Privacy Protected</p>
+</div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body></html>
+

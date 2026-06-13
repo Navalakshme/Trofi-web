@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>TROFi Insights — The Dark Store Revolution</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="icon" type="image/png" href="../assets/trofi-logo-transparent.png" />
+  <style>
+    .article-hero {
+      background: linear-gradient(160deg, var(--yellow) 0%, #FFE833 45%, #FFF5B0 80%, var(--white) 100%) !important;
+      padding-top: calc(var(--nav-height) + 40px) !important;
+      padding-bottom: 60px !important;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--gray-1);
+    }
+    .article-header {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px;
+      text-align: left;
+    }
+    .article-meta-top {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .article-tag-pill {
+      background: var(--blue);
+      color: #fff;
+      padding: 4px 12px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      border-radius: 100px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .article-read-time {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+    .article-title {
+      font-family: var(--font-body);
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 800;
+      color: var(--blue-dark);
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+    .article-author-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .author-img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      box-shadow: var(--shadow-sm);
+    }
+    .author-details strong {
+      display: block;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+    .author-details span {
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+
+    .article-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+    .article-banner-img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: var(--radius-xl);
+      margin-bottom: 40px;
+      box-shadow: var(--shadow-md);
+    }
+    .article-content {
+      font-size: 1.08rem;
+      line-height: 1.8;
+      color: var(--text);
+    }
+    .article-content p {
+      margin-bottom: 24px;
+    }
+    .article-content h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--blue);
+      margin-top: 40px;
+      margin-bottom: 16px;
+    }
+    .article-content blockquote {
+      border-left: 4px solid var(--yellow);
+      background: var(--off-white);
+      padding: 20px 28px;
+      font-style: italic;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: 32px 0;
+      font-size: 1.1rem;
+      color: var(--blue-dark);
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--blue);
+      margin-bottom: 24px;
+      transition: transform 0.2s;
+    }
+    .back-btn:hover {
+      transform: translateX(-4px);
+    }
+  </style>
+  <link rel="stylesheet" href="../css/responsive.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav transparent scrolled" id="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <img src="../assets/trofi-logo-transparent.png" alt="TROFi" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="ride.html">TROFi Ride</a></li>
+        <li><a href="eats.html">TROFi Eats</a></li>
+        <li><a href="mart.html">TROFi Mart</a></li>
+        <li><a href="pay.html">TROFi Pay</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="partners.html">Partners</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="partners.html" class="btn btn-outline btn-sm">Become a Partner</a>
+        <a href="../index.html#download" class="btn btn-outline-yellow btn-sm">Get the App</a>
+      </div>
+      <button class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="ride.html">TROFi Ride</a>
+    <a href="eats.html">TROFi Eats</a>
+    <a href="mart.html">TROFi Mart</a>
+    <a href="pay.html">TROFi Pay</a>
+    <a href="about.html">About</a>
+    <a href="partners.html">Partners</a>
+    <a href="contact.html">Contact</a>
+    <a href="../index.html#download" class="btn btn-primary btn-lg" style="margin-top:24px;">Get the App</a>
+  </div>
+
+  <section class="article-hero">
+    <div class="hero-bg-doodle hero-about-doodle" aria-hidden="true"></div>
+    <div class="article-header">
+      <a href="../index.html" class="back-btn">← Back to Insights</a>
+      <div class="article-meta-top">
+        <span class="article-tag-pill">Quick Commerce</span>
+        <span class="article-read-time">7 min read · Published May 28, 2026</span>
+      </div>
+      <h1 class="article-title">The Dark Store Revolution: How TROFi Mart Achieves 10-Minute Delivery Across India</h1>
+      <div class="article-author-card">
+        <div class="author-img">AS</div>
+        <div class="author-details">
+          <strong>Ananya Srivastava</strong>
+          <span>Director of Hyperlocal Operations, TROFi Mart</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="article-container">
+    <img class="article-banner-img" src="https://images.unsplash.com/photo-1526367790999-0150786686a2?w=1200&q=80" alt="Dark store worker picking order"/>
+    
+    <div class="article-content">
+      <p>When quick commerce first arrived in India, critics were quick to dismiss the 10-minute promise. "It's logistically impossible," they argued, pointing to India's notorious traffic jams, erratic road networks, and unpredictable weather. Yet, in 2026, TROFi Mart routinely fulfills millions of orders in under 10 minutes—with an average delivery time of just 8 minutes and 42 seconds.</p>
+      
+      <p>How did we turn the logistically impossible into a daily commodity? The secret lies in a major operational shift: the Dark Store Revolution.</p>
+
+      <h3>What is a Dark Store?</h3>
+      <p>Unlike traditional retail supermarkets, a dark store is not open to the public. It is a highly optimized micro-warehouse closed to foot traffic, designed exclusively for rapid online order fulfillment. At TROFi, we strategically position these dark stores within a 2km radius of dense urban neighborhoods. By keeping the delivery radius extremely short, traffic ceases to be a major obstacle.</p>
+      
+      <blockquote>
+        "Our delivery partners don't need to speed or take risks on the road. Because they only travel 1.5km to 2km on average, they can drive safely and comfortably and still make the delivery in under 7 minutes."
+      </blockquote>
+
+      <h3>AI-Driven Inventory and predictive stocking</h3>
+      <p>Fulfilling an order in 10 minutes requires packing it in under 60 seconds. To achieve this, our dark stores run on advanced AI inventory prediction engines. Before a customer even adds milk or bread to their cart, our system predicts local demand based on historic patterns, weather, and real-time trends, ensuring our micro-warehouses are stocked with exactly what the neighborhood needs.</p>
+
+      <h3>Hyper-Efficient Floor Layouts</h3>
+      <p>Inside a TROFi dark store, item layouts are optimized down to the centimeter. Fast-moving goods like dairy, fresh produce, and bread are kept closest to the packing stations. Our picking partners use smart handheld devices that calculate the most efficient path through the aisles. A picker can gather a 10-item order in less than 30 seconds.</p>
+
+      <h3>Cold-Chain Logistics</h3>
+      <p>Maintaining the quality of fresh food is as critical as speed. TROFi Mart features continuous temperature monitoring and integrated cold chain units inside every dark store, ensuring that dairy, ice cream, and fresh vegetables arrive at your door in pristine condition, even in the middle of a hot Indian summer.</p>
+
+      <p>The dark store revolution isn't just about speed; it's about redefining urban retail. By combining localized storage with predictive tech, we are building a seamless commerce infrastructure for the future of India.</p>
+    </div>
+  </div>
+
+  <footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="../assets/TROFi Logo enhanced.png" alt="TROFi"/>
+        <p>India's next-generation super-app for rides, food delivery, quick commerce, and financial services.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="ride.html">TROFi Ride</a>
+        <a href="eats.html">TROFi Eats</a>
+        <a href="mart.html">TROFi Mart</a>
+        <a href="pay.html">TROFi Pay</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About TROFi</a>
+        <a href="about.html#careers">Careers</a>
+        <a href="article-superapp.html">Blog</a>
+      </div>
+      <div class="footer-col">
+        <h4>Partners</h4>
+        <a href="partners.html#driver">Become a Driver</a>
+        <a href="partners.html#restaurant">List Restaurant</a>
+        <a href="partners.html#store">Partner Store</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="contact.html">Help Centre</a>
+        <a href="contact.html#grievance">Grievance</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 TROFi Technologies Pvt. Ltd. · Bengaluru, India</p>
+      <p>Secured & Regulated · Privacy Protected</p>
+    </div>
+  </div>
+</footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
+

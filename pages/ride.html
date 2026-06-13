@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>TROFi Ride — Your City, On-Demand</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="icon" type="image/png" href="../assets/trofi-logo-transparent.png" />
+<style>
+
+
+.hero-p{font-size:1.15rem;color:var(--text);opacity:0.85;margin-bottom:28px;line-height:1.65;max-width:540px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:20px}
+
+/* HERO MOCKUP — clean, no shadow, no bg, just the image */
+.hero-mockup{display:flex;justify-content:center;align-items:center}
+.hero-mockup img{
+  width:380px;
+  height:auto;
+  object-fit:contain;
+  background:transparent;
+  box-shadow:none;
+  filter:none;
+  display:block;
+  animation:floatPhone 6s ease-in-out infinite;
+}
+
+@keyframes floatPhone {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+/* STATS */
+.stats-bar{background:var(--blue);padding:32px 48px}
+.stats-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:900px;margin:0 auto}
+.stat-card{background:#fff;border-radius:var(--radius-lg);padding:28px 20px;text-align:center;border-top:3px solid var(--yellow)}
+.stat-num{font-family:var(--font-display);font-size:48px;color:var(--blue);line-height:1}
+.stat-lbl{font-size:0.72rem;font-weight:600;color:var(--gray-3);text-transform:uppercase;letter-spacing:0.06em;margin-top:6px}
+
+/* RIDE TYPES */
+.section{padding:80px 48px}
+.section-title{font-family:var(--font-display);font-size:clamp(36px,5vw,60px);letter-spacing:0.02em;margin-bottom:10px}
+.section-sub{font-size:1rem;color:var(--text-light);max-width:460px;line-height:1.6;margin-bottom:48px}
+.ride-types{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.ride-card{background:#fff;border-radius:var(--radius-lg);padding:32px 24px;text-align:center;box-shadow:var(--shadow-sm);border-bottom:3px solid var(--yellow)}
+.ride-icon{font-size:36px;margin-bottom:16px}
+.ride-card h3{font-size:1.05rem;font-weight:700;margin-bottom:8px}
+.ride-card p{font-size:0.85rem;color:var(--text-light);line-height:1.55;margin-bottom:12px}
+.ride-price{font-family:monospace;font-size:1.1rem;font-weight:700;color:var(--blue)}
+.ride-card-img-wrapper {
+  width: 100%;
+  height: 140px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 16px;
+  background: var(--off-white);
+}
+.ride-card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+.ride-card-img-wrapper img.contain-img {
+  object-fit: contain;
+  background: #fff;
+  padding: 8px;
+}
+.ride-card:hover .ride-card-img-wrapper img {
+  transform: scale(1.05);
+}
+.safety-img-container {
+  box-shadow: none !important;
+  background: transparent !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+.safety-img-container img {
+  width: 100%;
+  height: auto;
+  max-height: 520px;
+  object-fit: contain !important;
+}
+
+/* WHY SECTION */
+.off-section{background:var(--off-white);padding:80px 48px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.split-img{border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-lg)}
+.split-img img{width:100%;height:440px;object-fit:cover}
+.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
+.feat-item{padding:16px;background:#fff;border-radius:var(--radius-md);box-shadow:var(--shadow-sm)}
+.feat-item .icon{font-size:22px;margin-bottom:8px}
+.feat-item strong{font-size:0.88rem;display:block;margin-bottom:4px}
+.feat-item p{font-size:0.8rem;color:var(--text-light);line-height:1.5}
+
+/* HOW IT WORKS */
+.steps-split{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;padding:80px 48px}
+.step{display:flex;gap:20px;padding-bottom:32px;position:relative}
+.step:not(:last-child)::before{content:'';position:absolute;left:19px;top:44px;bottom:0;width:2px;background:linear-gradient(to bottom,var(--blue),transparent);opacity:0.2}
+.step-num{width:40px;height:40px;border-radius:50%;background:var(--blue);color:#fff;font-family:var(--font-display);font-size:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 16px rgba(0,84,196,0.3)}
+.step h4{font-size:1rem;font-weight:700;margin-bottom:5px}
+.step p{font-size:0.88rem;color:var(--text-light);line-height:1.6}
+.steps-img img{border-radius:var(--radius-xl);box-shadow:var(--shadow-lg);width:100%;height:480px;object-fit:cover}
+
+/* FAQ */
+.faq-section{background:var(--off-white);padding:80px 48px}
+.faq-list{max-width:720px;margin:48px auto 0}
+.faq-item{border-bottom:1px solid var(--gray-1);padding:22px 0}
+.faq-q{display:flex;justify-content:space-between;align-items:center;font-size:0.98rem;font-weight:600;cursor:pointer}
+.faq-icon{width:28px;height:28px;border-radius:50%;background:var(--off-white);border:1.5px solid var(--gray-2);display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:700;color:var(--blue);flex-shrink:0}
+.faq-a{padding-top:12px;font-size:0.9rem;color:var(--text-light);line-height:1.7;display:none}
+
+/* CTA */
+.cta-section{padding:80px 48px}
+.cta-band{background:linear-gradient(135deg,var(--blue),var(--blue-dark));border-radius:var(--radius-xl);padding:60px;text-align:center}
+.cta-band h2{font-family:var(--font-display);font-size:clamp(36px,4vw,60px);color:#fff;margin-bottom:14px}
+.cta-band p{color:rgba(255,255,255,0.7);max-width:460px;margin:0 auto 32px;font-size:0.95rem}
+.cta-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+/* FOOTER */
+.footer{background:#0A0A0F;padding:56px 48px 24px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.footer-brand img{height:64px;margin-bottom:14px;mix-blend-mode:normal}
+.footer-brand p{color:rgba(255,255,255,0.5);font-size:0.85rem;line-height:1.7;max-width:240px;margin-top:10px}
+.footer-col h4{font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--yellow);margin-bottom:16px}
+.footer-col a{display:block;font-size:0.85rem;color:rgba(255,255,255,0.5);margin-bottom:8px}
+.footer-bottom{padding-top:20px;display:flex;justify-content:space-between}
+.footer-bottom p{font-size:0.78rem;color:rgba(255,255,255,0.3)}
+</style>
+<link rel="stylesheet" href="../css/responsive.css" />
+</head>
+<body>
+
+<nav class="nav transparent" id="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">
+      <img src="../assets/trofi-logo-transparent.png" alt="TROFi" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="#" class="active">TROFi Ride</a></li>
+      <li><a href="eats.html">TROFi Eats</a></li>
+      <li><a href="mart.html">TROFi Mart</a></li>
+      <li><a href="pay.html">TROFi Pay</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="partners.html">Partners</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="partners.html#driver" class="btn btn-outline btn-sm">Become a Driver</a>
+      <a href="../index.html#download" class="btn btn-outline-yellow btn-sm">Get the App</a>
+    </div>
+    <button class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu">
+  <a href="../index.html">Home</a>
+  <a href="ride.html">TROFi Ride</a>
+  <a href="eats.html">TROFi Eats</a>
+  <a href="mart.html">TROFi Mart</a>
+  <a href="pay.html">TROFi Pay</a>
+  <a href="about.html">About</a>
+  <a href="partners.html">Partners</a>
+  <a href="contact.html">Contact</a>
+  <a href="../index.html#download" class="btn btn-primary btn-lg" style="margin-top:24px;">Get the App</a>
+</div>
+
+<section class="hero">
+  <div class="hero-bg-doodle hero-rides-doodle" aria-hidden="true"></div>
+  <div class="hero-grid">
+    <div>
+      <nav class="breadcrumb fade-up"><a href="../index.html">Home</a> › <span style="color:var(--blue-dark)">TROFi Ride</span></nav>
+      <div class="hero-tag fade-up">🛵 TROFi Ride</div>
+      <h1 class="display-hero fade-up delay-1">Your City,<br/><span>On-Demand.</span></h1>
+      <p class="hero-p fade-up delay-2">Bike taxis, autos, cabs & intercity rides — booked in under 30 seconds. Zero surge pricing, always. Background-verified drivers, every time.</p>
+      <div class="hero-btns fade-up delay-3">
+        <a href="#" class="btn btn-secondary btn-lg">Book a Ride →</a>
+        <a href="partners.html#driver" class="btn btn-outline btn-lg">Become a Driver</a>
+      </div>
+    </div>
+    <div class="hero-mockup slide-right delay-2">
+      <img src="../assets/mockup-travel.png" alt="TROFi Ride App"/>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-card"><div class="stat-num">2M+</div><div class="stat-lbl">Rides Completed</div></div>
+    <div class="stat-card"><div class="stat-num">48K+</div><div class="stat-lbl">Verified Drivers</div></div>
+    <div class="stat-card"><div class="stat-num">30 sec</div><div class="stat-lbl">Avg Booking Time</div></div>
+    <div class="stat-card"><div class="stat-num">₹0</div><div class="stat-lbl">Peak Hour Surge</div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-label fade-up">Ride Options</div>
+  <div class="section-title fade-up">Choose Your Ride</div>
+  <p class="section-sub fade-up delay-1">From a quick bike hop to a comfortable intercity journey — TROFi has you covered.</p>
+  <div class="ride-types">
+    <div class="ride-card fade-up"><div class="ride-card-img-wrapper"><img src="../assets/bike-rider.png" alt="Bike Taxi" class="contain-img" style="padding:12px !important;"/></div><h3>Bike Taxi</h3><p>Fastest way to beat city traffic with our convenient two-wheeler service.</p><div class="ride-price">Low Base Fare</div></div>
+    <div class="ride-card fade-up delay-1"><div class="ride-card-img-wrapper"><img src="../assets/auto-rider.png" alt="Auto Rickshaw" class="contain-img" style="padding:12px !important;"/></div><h3>Auto Rickshaw</h3><p>3-wheeler comfort for short to mid-range city travel.</p><div class="ride-price">Standard Base</div></div>
+    <div class="ride-card fade-up delay-2"><div class="ride-card-img-wrapper"><img src="../assets/cab-rider.png" alt="Cab (AC)" class="contain-img" style="padding:12px !important;"/></div><h3>Cab (AC)</h3><p>Comfortable air-conditioned sedan for daily commuting.</p><div class="ride-price">Premium Base</div></div>
+    <div class="ride-card fade-up delay-3"><div class="ride-card-img-wrapper"><img src="../assets/intercity-rider.png" alt="Intercity" class="contain-img" style="padding:12px !important;"/></div><h3>Intercity</h3><p>Long-distance travel between cities in a premium, comfortable cab.</p><div class="ride-price">Fixed Per-Km</div></div>
+  </div>
+</div>
+
+<div class="off-section">
+  <div class="split">
+    <div class="split-img safety-img-container slide-left">
+      <img src="../assets/safety-illustration.png" alt="Safe ride"/>
+    </div>
+    <div class="slide-right">
+      <div class="section-label">Why TROFi Ride</div>
+      <div class="section-title">Built for Safety.<br/>Priced for Everyone.</div>
+      <div class="feat-grid">
+        <div class="feat-item"><div class="icon">🔒</div><strong>Zero Surge Pricing</strong><p>Fixed fares 24/7 — no premium during rain, festivals or peak hours.</p></div>
+        <div class="feat-item"><div class="icon">🛡️</div><strong>Verified Drivers</strong><p>Background checks, police verification & training for every partner.</p></div>
+        <div class="feat-item"><div class="icon">📍</div><strong>Live GPS Tracking</strong><p>Share ride status with family in real time from the app.</p></div>
+        <div class="feat-item"><div class="icon">🆘</div><strong>SOS Button</strong><p>One-tap emergency alert to TROFi Safety Team & contacts.</p></div>
+        <div class="feat-item"><div class="icon">♀️</div><strong>Women Safety Mode</strong><p>Female drivers available on request; silent alarm feature.</p></div>
+        <div class="feat-item"><div class="icon">💰</div><strong>Earn TROFi Coins</strong><p>Get coins on every ride — redeem on food, mart orders and more.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="steps-split">
+  <div class="slide-left">
+    <div class="section-label">How It Works</div>
+    <div class="section-title">Ride in 3 Steps</div>
+    <div style="margin-top:36px">
+      <div class="step"><div class="step-num">1</div><div><h4>Open TROFi & Set Destination</h4><p>Enter your pickup and drop location. The app instantly shows estimated fare and arrival time — no surprises.</p></div></div>
+      <div class="step"><div class="step-num">2</div><div><h4>Choose Your Ride Type</h4><p>Pick from Bike, Auto, Cab or Intercity. See driver rating, distance and fixed price upfront.</p></div></div>
+      <div class="step"><div class="step-num">3</div><div><h4>Ride & Earn Coins</h4><p>Track driver live, ride safely, pay via TROFi Pay or cash, and earn TROFi Coins on every trip.</p></div></div>
+    </div>
+  </div>
+  <div class="steps-img slide-right" style="box-shadow:none; background:transparent;">
+    <img src="../assets/booking-steps-new.png" alt="Booking ride" style="object-fit:contain; max-height:480px; width:100%; height:auto;"/>
+  </div>
+</div>
+
+<div class="faq-section">
+  <div style="text-align:center" class="fade-up">
+    <div class="section-label" style="margin:0 auto 14px">FAQ</div>
+    <div class="section-title">Common Questions</div>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item fade-up"><div class="faq-q">How is TROFi Ride different from Competitor 1 or Competitor 2?<span class="faq-icon">+</span></div><div class="faq-a">TROFi offers zero surge pricing at all times — even during peak hours, rain, or festivals. We also offer a unified wallet plus TROFi Coins on every trip.</div></div>
+    <div class="faq-item fade-up delay-1"><div class="faq-q">Are the drivers background-verified?<span class="faq-icon">+</span></div><div class="faq-a">Yes. Every TROFi driver undergoes police verification, identity check, and a mandatory safety training module before being onboarded.</div></div>
+    <div class="faq-item fade-up delay-2"><div class="faq-q">What happens if I cancel a ride?<span class="faq-icon">+</span></div><div class="faq-a">You can cancel for free within 3 minutes of booking. After that, a minimal cancellation fee of ₹15–30 applies.</div></div>
+    <div class="faq-item fade-up delay-3"><div class="faq-q">Is intercity travel available in all cities?<span class="faq-icon">+</span></div><div class="faq-a">Intercity rides are currently available from all 25+ TROFi cities to destinations within 500 km.</div></div>
+  </div>
+</div>
+
+<div class="cta-section fade-up">
+  <div class="cta-band">
+    <div style="display:inline-flex;padding:4px 14px;background:rgba(255,221,0,0.2);border-radius:100px;color:var(--yellow);font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:18px">🚗 Get Riding</div>
+    <h2>Your First Ride is <span style="color:var(--yellow)">Free.</span></h2>
+    <p>Download TROFi and use code <strong style="color:var(--yellow)">RIDE1FREE</strong> for your first ride, no minimum fare.</p>
+    <div class="cta-actions">
+      <a href="#" class="btn btn-primary btn-lg">Download TROFi</a>
+      <a href="partners.html#driver" class="btn btn-outline-white btn-lg">Drive with TROFi</a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="../assets/TROFi Logo enhanced.png" alt="TROFi"/>
+      <p>India's next-generation super-app for rides, food delivery, quick commerce, and financial services.</p>
+    </div>
+    <div class="footer-col"><h4>Services</h4><a href="ride.html">TROFi Ride</a><a href="eats.html">TROFi Eats</a><a href="mart.html">TROFi Mart</a><a href="pay.html">TROFi Pay</a></div>
+    <div class="footer-col"><h4>Company</h4><a href="about.html">About TROFi</a><a href="about.html#careers">Careers</a><a href="article-superapp.html">Blog</a></div>
+    <div class="footer-col"><h4>Partners</h4><a href="partners.html#driver">Become a Driver</a><a href="partners.html#restaurant">List Restaurant</a><a href="partners.html#store">Partner Store</a></div>
+    <div class="footer-col"><h4>Support</h4><a href="contact.html">Help Centre</a><a href="contact.html#grievance">Grievance</a><a href="#">Privacy</a><a href="#">Terms</a></div>
+  </div>
+  <div class="footer-bottom">
+  <p>© 2025 TROFi Technologies Pvt. Ltd. · Bengaluru, India</p>
+  <p>Secured & Regulated · Privacy Protected</p>
+</div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body></html>
+
