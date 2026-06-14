@@ -1288,8 +1288,11 @@ body, h1, h2, h3, h4, h5, h6, p, span, a, li, td, th, strong, small, em, label, 
 .btn-primary, .btn-primary *, .btn-primary:hover, .btn-primary:hover * {
   color: #001F5B !important; /* Keep original dark-blue text on primary buttons */
 }
-.btn-outline, .btn-outline *, .btn-outline:hover, .btn-outline:hover * {
+.btn-outline, .btn-outline * {
   color: var(--blue) !important;
+}
+.btn-outline:hover, .btn-outline:hover * {
+  color: var(--white) !important;
 }
 .btn-outline-yellow, .btn-outline-yellow *, .btn-outline-yellow:hover, .btn-outline-yellow:hover * {
   color: var(--blue) !important;
@@ -1401,5 +1404,44 @@ div[style*="background:var(--dark)"], div[style*="background:var(--dark)"] * {
 .app-btn:hover * {
   color: #003A8C !important;
   -webkit-text-fill-color: #003A8C !important;
+}
+
+/* Force blue text on all yellow boxes/buttons/labels across all pages, even inside dark/blue background sections */
+.btn-primary,
+.btn-primary *,
+.section-label-yellow,
+.section-label-yellow *,
+.section-label[style*="background: var(--yellow)"],
+.section-label[style*="background: var(--yellow)"] *,
+.section-label[style*="background:var(--yellow)"],
+.section-label[style*="background:var(--yellow)"] *,
+.section-label[style*="background: #FFDD00"],
+.section-label[style*="background:#FFDD00"] *,
+.service-banner-text .section-label,
+.service-banner-text .section-label *,
+.superpass-card .section-label,
+.superpass-card .section-label *,
+.superpass-card .btn-primary,
+.superpass-card .btn-primary *,
+.download-section .section-label,
+.download-section .section-label * {
+  color: var(--blue) !important;
+  -webkit-text-fill-color: var(--blue) !important;
+  opacity: 1 !important;
+}
+
+.btn-primary:hover,
+.btn-primary:hover *,
+.superpass-card .btn-primary:hover,
+.superpass-card .btn-primary:hover * {
+  color: #003A8C !important;
+  -webkit-text-fill-color: #003A8C !important;
+}
+
+/* Ensure the text inside the QR card on the home page is blue (and visible on its white background) */
+.qr-card,
+.qr-card * {
+  color: var(--blue) !important;
+  -webkit-text-fill-color: var(--blue) !important;
 }
 

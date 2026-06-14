@@ -189,25 +189,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-// ── QR Code pattern generator (decorative) ──
-const qrGrid = document.getElementById('qr-grid');
-if (qrGrid) {
-  // Fixed QR-like pattern seeded deterministically
-  const pattern = [
-    1,1,1,1,1,1,1,0,1,0,
-    1,0,0,0,0,0,1,0,0,1,
-    1,0,1,1,1,0,1,0,1,0,
-    1,0,1,1,1,0,1,0,0,1,
-    1,0,1,1,1,0,1,0,1,1,
-    1,0,0,0,0,0,1,0,0,1,
-    1,1,1,1,1,1,1,0,1,0,
-    0,0,0,0,0,0,0,0,1,1,
-    1,0,1,1,0,1,1,0,0,1,
-    0,1,0,0,1,0,1,1,1,0
-  ];
-  pattern.forEach(bit => {
-    const cell = document.createElement('div');
-    cell.style.cssText = `background:${bit ? '#0a0a0a' : '#fff'};border-radius:1px;`;
-    qrGrid.appendChild(cell);
-  });
-}
+

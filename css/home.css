@@ -250,9 +250,9 @@ h1.display-hero span.hero-line-orange {
 }
 
 .service-banner-text .section-label {
-  background: rgba(255, 221, 0, 0.15);
-  color: #FFDD00;
-  border: 1px solid rgba(255, 221, 0, 0.25);
+  background: var(--yellow) !important;
+  color: var(--blue) !important;
+  border: 1px solid var(--yellow) !important;
   margin-bottom: 16px;
   font-size: 0.95rem !important;
   font-weight: 700 !important;
@@ -271,12 +271,12 @@ h1.display-hero span.hero-line-orange {
 }
 
 .service-banner-text h3 {
-  color: #fff;
+  color: #fff !important;
   margin-bottom: 12px;
 }
 
 .service-banner-text p {
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.75) !important;
   line-height: 1.6;
   font-size: 0.95rem;
   margin-bottom: 24px;
@@ -308,10 +308,11 @@ h1.display-hero span.hero-line-orange {
   align-items: center;
   text-align: center;
   gap: 12px;
-  background: rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.07) !important;
   border-radius: var(--radius-md);
   padding: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  box-shadow: none;
 }
 
 .service-banner-feature span {
@@ -322,7 +323,7 @@ h1.display-hero span.hero-line-orange {
 .service-banner-feature strong {
   display: block;
   font-size: 0.9rem;
-  color: #fff;
+  color: #fff !important;
   margin-bottom: 4px;
 }
 
@@ -377,7 +378,7 @@ h1.display-hero span.hero-line-orange {
 .price-new small { font-family: var(--font-body); font-size: 1rem; color: rgba(255,255,255,0.6); }
 
 /* ── Cities ── */
-.cities-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.cities-inner { display: grid; grid-template-columns: 0.82fr 1.18fr; gap: 24px; align-items: center; }
 .cities-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
 .city-tag {
   padding: 8px 16px;
@@ -398,7 +399,7 @@ h1.display-hero span.hero-line-orange {
   color: var(--gray-3);
   border: 1px dashed var(--gray-2);
 }
-.india-svg { width: 100%; max-width: 420px; filter: drop-shadow(0 20px 40px rgba(0,84,196,0.12)); }
+.india-svg { width: 100%; max-width: 620px; filter: drop-shadow(0 20px 40px rgba(0,84,196,0.12)); }
 
 /* ── Testimonials ── */
 .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
@@ -414,7 +415,7 @@ h1.display-hero span.hero-line-orange {
 .download-perks { display: flex; gap: 20px; margin-top: 24px; flex-wrap: wrap; }
 .perk { font-size: 0.85rem; font-weight: 600; color: rgba(255,255,255,0.75); }
 .qr-card { background: #fff; border-radius: var(--radius-lg); padding: 28px; display: inline-block; box-shadow: 0 24px 64px rgba(0,0,0,0.25); }
-.qr-placeholder { width: 160px; height: 160px; background: #fff; border: 3px solid var(--dark); border-radius: 8px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.qr-placeholder { width: 160px; height: 160px; background: #fff; border-radius: 8px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
 .qr-grid { display: grid; grid-template-columns: repeat(10, 1fr); gap: 2px; width: 140px; height: 140px; }
 .download-stat-pills { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
 .dl-pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 100px; padding: 8px 16px; font-size: 0.82rem; color: rgba(255,255,255,0.8); font-weight: 600; text-align: center; }
@@ -442,6 +443,7 @@ h1.display-hero span.hero-line-orange {
   .hero-inner { grid-template-columns: 1fr; gap: 40px; }
   .hero-content { max-width: 100%; }
   .hero-visual { order: -1; }
+  .hero-phone-wrapper { margin-top: -10px !important; }
   .hero-mockup-img { width: 260px; }
   .float-card-1, .float-card-2, .float-card-3 { display: none; }
   .service-banner-content { grid-template-columns: 1fr; gap: 24px; padding: 36px; }
