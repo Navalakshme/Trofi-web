@@ -358,25 +358,30 @@ h1, h2, h3, h4 { line-height: 1.1; }
   background-size: 640px;
   background-repeat: repeat;
   mix-blend-mode: multiply;
-  opacity: 0.06;
+  opacity: 0.10;
   pointer-events: none;
 }
 
-/* Breadcrumb Navigation */
 .breadcrumb {
   display: flex;
   align-items: center;
   gap: 8px;
   font-size: 0.82rem;
-  color: rgba(0,30,80,0.5);
+  color: var(--blue-deeper) !important;
   margin-bottom: 20px;
+  font-weight: 700;
 }
 .breadcrumb a {
-  color: rgba(0,30,80,0.5);
+  color: var(--blue-deeper) !important;
+  font-weight: 700;
   transition: var(--transition);
 }
 .breadcrumb a:hover {
-  color: var(--blue);
+  color: var(--blue) !important;
+}
+.breadcrumb span {
+  color: var(--blue-deeper) !important;
+  font-weight: 700;
 }
 
 /* Hero Tag Pill */
@@ -397,21 +402,22 @@ h1, h2, h3, h4 { line-height: 1.1; }
 
 .hero-eats-doodle {
   background-image: url('../assets/eats_doodle_bg.png');
-  opacity: 0.08;
+  opacity: 0.12;
 }
 
 .hero-rides-doodle {
   background-image: url('../assets/rides_doodle_bg.png');
+  opacity: 0.12;
 }
 
 .hero-mart-doodle {
   background-image: url('../assets/mart_doodle_bg.png');
-  opacity: 0.08;
+  opacity: 0.22;
 }
 
 .hero-pay-doodle {
   background-image: url('../assets/pay_doodle_bg.png');
-  opacity: 0.08;
+  opacity: 0.22;
 }
 
 /* ── Section Labels ── */
@@ -1117,12 +1123,11 @@ h1, h2, h3, h4 { line-height: 1.1; }
 }
 
 /* Doodle background styling */
-/* Doodle background styling */
 .hero-bg-doodle.hero-about-doodle {
   background-image: url('../assets/about_doodle_bg.png') !important;
   background-size: 720px !important;
   background-repeat: repeat !important;
-  opacity: 0.08 !important;
+  opacity: 0.12 !important;
   mix-blend-mode: multiply !important;
 }
 
@@ -1130,7 +1135,7 @@ h1, h2, h3, h4 { line-height: 1.1; }
   background-image: url('../assets/partners_doodle_bg.png') !important;
   background-size: 720px !important;
   background-repeat: repeat !important;
-  opacity: 0.20 !important;
+  opacity: 0.38 !important;
   mix-blend-mode: multiply !important;
 }
 
@@ -1138,7 +1143,7 @@ h1, h2, h3, h4 { line-height: 1.1; }
   background-image: url('../assets/contact_doodle_bg.png') !important;
   background-size: 720px !important;
   background-repeat: repeat !important;
-  opacity: 0.05 !important;
+  opacity: 0.10 !important;
   mix-blend-mode: multiply !important;
 }
 
@@ -1379,6 +1384,34 @@ div[style*="background:var(--dark)"], div[style*="background:var(--dark)"] * {
   opacity: 1 !important;
 }
 
+/* ──────────────────────────────────────────────────────────
+   YELLOW ELEMENTS MUST ALWAYS SHOW BLUE TEXT (NO EXCEPTIONS)
+   These rules MUST come AFTER the white rule above to win.
+   Uses high-specificity attribute selectors + !important.
+   ────────────────────────────────────────────────────────── */
+.btn-primary,
+.btn-primary *,
+.cta-band .btn-primary,
+.cta-band .btn-primary *,
+.partner-section .btn-primary,
+.partner-section .btn-primary *,
+div[style*="background:var(--yellow)"],
+div[style*="background: var(--yellow)"],
+div[style*="background:var(--yellow)"] *,
+div[style*="background: var(--yellow)"] *,
+span[style*="background:var(--yellow)"],
+span[style*="background: var(--yellow)"],
+span[style*="background:var(--yellow)"] *,
+span[style*="background: var(--yellow)"] *,
+a[style*="background:var(--yellow)"],
+a[style*="background: var(--yellow)"],
+a[style*="background:var(--yellow)"] *,
+a[style*="background: var(--yellow)"] * {
+  color: var(--blue) !important;
+  -webkit-text-fill-color: var(--blue) !important;
+  opacity: 1 !important;
+}
+
 /* Redefining Old Price to be distinct on dark backgrounds */
 .price-old {
   color: #FFFFFF !important;
@@ -1424,6 +1457,17 @@ div[style*="background:var(--dark)"], div[style*="background:var(--dark)"] * {
 .superpass-card .btn-primary *,
 .download-section .section-label,
 .download-section .section-label * {
+  color: var(--blue) !important;
+  -webkit-text-fill-color: var(--blue) !important;
+  opacity: 1 !important;
+}
+
+/* ── Yellow badge divs inside CTA bands & dark sections must ALWAYS show blue text ── */
+/* Targets inline-styled divs with yellow background regardless of parent */
+div[style*="background:var(--yellow)"],
+div[style*="background: var(--yellow)"],
+div[style*="background:var(--yellow)"] *,
+div[style*="background: var(--yellow)"] * {
   color: var(--blue) !important;
   -webkit-text-fill-color: var(--blue) !important;
   opacity: 1 !important;

@@ -187,6 +187,82 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // ── Mockup Offers Carousel ──
+  const track = document.querySelector('.mockup-slider-track');
+  const dots = document.querySelectorAll('.mockup-slider-dots .dot');
+  const overlay = document.querySelector('.mockup-slider-overlay');
+  
+  if (track && overlay) {
+    let currentIndex = 0;
+    const totalSlides = 3; // 3 slides
+    let autoPlayTimer = null;
+    
+    const updateSlider = (index) => {
+      currentIndex = index;
+      track.style.transform = `translateX(-${index * 33.3333}%)`;
+      if (dots.length) {
+        dots.forEach((dot, idx) => {
+          dot.classList.toggle('active', idx === index);
+        });
+      }
+    };
+    
+    const startAutoPlay = () => {
+      autoPlayTimer = setInterval(() => {
+        let nextIndex = (currentIndex + 1) % totalSlides;
+        updateSlider(nextIndex);
+      }, 4000);
+    };
+    
+    const stopAutoPlay = () => {
+      if (autoPlayTimer) {
+        clearInterval(autoPlayTimer);
+      }
+    };
+    
+    // Dot click (if any exist)
+    if (dots.length) {
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          stopAutoPlay();
+          updateSlider(index);
+          startAutoPlay();
+        });
+      });
+    }
+    
+    // Touch swipe support
+    let startX = 0;
+    let isDragging = false;
+    
+    overlay.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+      isDragging = true;
+      stopAutoPlay();
+    }, { passive: true });
+    
+    overlay.addEventListener('touchend', (e) => {
+      if (!isDragging) return;
+      isDragging = false;
+      const endX = e.changedTouches[0].clientX;
+      const diffX = startX - endX;
+      
+      // Threshold of 30px
+      if (Math.abs(diffX) > 30) {
+        if (diffX > 0) {
+          // Swipe left -> Next
+          updateSlider((currentIndex + 1) % totalSlides);
+        } else {
+          // Swipe right -> Prev
+          updateSlider((currentIndex - 1 + totalSlides) % totalSlides);
+        }
+      }
+      startAutoPlay();
+    });
+    
+    startAutoPlay();
+  }
+
 });
-
-

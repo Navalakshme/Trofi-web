@@ -387,7 +387,8 @@ body {
     display: flex !important;
     flex-direction: column !important;
     gap: 8px !important;
-    background: var(--gray-1) !important;
+    background: rgba(0, 84, 196, 0.03) !important;
+    border: 1px solid rgba(0, 84, 196, 0.08) !important;
     border-radius: 16px !important;
     padding: 8px !important;
     margin: 0 auto 32px !important;
@@ -400,19 +401,24 @@ body {
     align-items: center !important;
     justify-content: center !important;
     padding: 14px 16px !important;
-    font-size: 0.9rem !important;
+    font-size: 1rem !important;
+    font-weight: 700 !important;
     border-radius: 12px !important;
-    background: transparent !important;
-    color: var(--gray-3) !important;
+    background: rgba(255, 221, 0, 0.12) !important;
+    color: var(--blue) !important;
+    -webkit-text-fill-color: var(--blue) !important;
     border: none !important;
     white-space: nowrap !important;
     box-sizing: border-box !important;
+    transition: all 0.3s ease !important;
   }
 
   .tab.active {
-    background: var(--blue) !important;
-    color: #fff !important;
-    box-shadow: var(--shadow-sm) !important;
+    background: var(--yellow) !important;
+    color: var(--blue) !important;
+    -webkit-text-fill-color: var(--blue) !important;
+    font-weight: 700 !important;
+    box-shadow: 0 4px 12px rgba(255, 221, 0, 0.25) !important;
   }
 
   .form-row {

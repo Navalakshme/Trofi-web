@@ -82,10 +82,13 @@ h1.display-hero span.hero-line-orange {
 
 .hero-phone-wrapper {
   position: relative;
-  display: flex;
-  justify-content: center;
+  display: inline-block;
+  width: fit-content;
   background: transparent;
   margin-top: -95px; /* Shift the phone mockup higher up to fill empty space and prevent bottom clipping */
+  margin-left: auto;
+  margin-right: auto;
+  animation: floatPhone 6s ease-in-out infinite;
 }
 
 /* The actual Home Mockup image */
@@ -99,7 +102,74 @@ h1.display-hero span.hero-line-orange {
   display: block;
   position: relative;
   z-index: 2;
-  animation: floatPhone 6s ease-in-out infinite;
+}
+
+/* Interactive Offers Slider Overlay */
+.mockup-slider-overlay {
+  position: absolute;
+  top: 69.52%;
+  left: 8.50%;
+  width: 83.00%;
+  height: 17.19%;
+  z-index: 10;
+  border-radius: 8px;
+  overflow: hidden;
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+}
+
+.mockup-slider-track {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.mockup-slide {
+  width: 33.333%;
+  height: 100%;
+  display: block;
+  box-sizing: border-box;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+.mockup-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+.mockup-slider-dots {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 15;
+}
+
+.mockup-slider-dots .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(0, 84, 196, 0.25);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mockup-slider-dots .dot.active {
+  width: 12px;
+  background: var(--blue);
+  border-radius: 3px;
 }
 
 @keyframes floatPhone {
@@ -432,7 +502,7 @@ h1.display-hero span.hero-line-orange {
   transition: var(--transition);
 }
 .partner-card:hover { background: rgba(255,255,255,0.07); border-color: var(--yellow); transform: translateY(-6px); }
-.partner-icon { font-size: 40px; margin-bottom: 20px; }
+.partner-icon { font-size: 40px; margin-bottom: 20px; border-radius: 12px; overflow: hidden; line-height: 0; }
 .partner-card h3 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 12px; }
 .partner-card p { font-size: 0.9rem; color: rgba(255,255,255,0.55); margin-bottom: 24px; line-height: 1.7; }
 .partner-perks { display: flex; flex-direction: column; gap: 8px; margin-bottom: 28px; }

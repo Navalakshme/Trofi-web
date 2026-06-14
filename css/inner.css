@@ -368,12 +368,13 @@
   align-items: center;
   gap: 8px;
   font-size: 0.82rem;
-  color: rgba(255,255,255,0.6);
+  color: var(--blue-deeper) !important;
   margin-bottom: 20px;
+  font-weight: 700;
 }
-.breadcrumb a { color: rgba(255,255,255,0.6); }
-.breadcrumb a:hover { color: var(--yellow); }
-.breadcrumb span { color: rgba(255,255,255,0.3); }
+.breadcrumb a { color: var(--blue-deeper) !important; font-weight: 700; }
+.breadcrumb a:hover { color: var(--blue) !important; }
+.breadcrumb span { color: var(--blue-deeper) !important; font-weight: 700; }
 
 /* ── Responsive ── */
 @media (max-width: 1024px) {
@@ -390,4 +391,14 @@
   .features-grid-3, .features-grid-2 { grid-template-columns: 1fr; }
   .cta-band { padding: 40px 28px; }
   .team-grid { grid-template-columns: repeat(2,1fr); }
+}
+
+/* ── Yellow badge divs inside CTA bands must show blue text, not white ── */
+div[style*="background:var(--yellow)"],
+div[style*="background: var(--yellow)"],
+div[style*="background:var(--yellow)"] *,
+div[style*="background: var(--yellow)"] * {
+  color: var(--blue) !important;
+  -webkit-text-fill-color: var(--blue) !important;
+  opacity: 1 !important;
 }
