@@ -402,7 +402,7 @@ h1, h2, h3, h4 { line-height: 1.1; }
 
 .hero-eats-doodle {
   background-image: url('../assets/eats_doodle_bg.png');
-  opacity: 0.07;
+  opacity: 0.05;
 }
 
 .hero-rides-doodle {
@@ -412,12 +412,12 @@ h1, h2, h3, h4 { line-height: 1.1; }
 
 .hero-mart-doodle {
   background-image: url('../assets/mart_doodle_bg.png');
-  opacity: 0.08;
+  opacity: 0.06;
 }
 
 .hero-pay-doodle {
   background-image: url('../assets/pay_doodle_bg.png');
-  opacity: 0.08;
+  opacity: 0.06;
 }
 
 /* ── Section Labels ── */
@@ -1134,7 +1134,7 @@ h1, h2, h3, h4 { line-height: 1.1; }
   background-image: url('../assets/partners_doodle_bg.png') !important;
   background-size: 720px !important;
   background-repeat: repeat !important;
-  opacity: 0.22 !important;
+  opacity: 0.15 !important;
   mix-blend-mode: multiply !important;
 }
 
@@ -1142,7 +1142,7 @@ h1, h2, h3, h4 { line-height: 1.1; }
   background-image: url('../assets/contact_doodle_bg.png') !important;
   background-size: 720px !important;
   background-repeat: repeat !important;
-  opacity: 0.06 !important;
+  opacity: 0.03 !important;
   mix-blend-mode: multiply !important;
 }
 
