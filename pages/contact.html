@@ -61,11 +61,11 @@
 .hero-badges{display:flex;gap:8px;flex-wrap:wrap;justify-content:center !important}
 .badge{display:inline-flex;align-items:center;gap:5px;padding:6px 12px;background:rgba(0,84,196,0.07);border:1px solid rgba(0,84,196,0.12);border-radius:100px;font-size:0.75rem;font-weight:600;color:var(--blue-dark);}
 .channels{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px}
-.channel-card{background:#fff;border-radius:var(--radius-xl);padding:32px 24px;text-align:center;box-shadow:var(--shadow-sm);border-top:3px solid transparent;transition:all 0.25s}
+.channel-card{background:#fff;border-radius:var(--radius-xl);padding:32px 24px;text-align:center;box-shadow:var(--shadow-sm);border-top:3px solid transparent;transition:all 0.25s;display:flex;flex-direction:column;align-items:center}
 .channel-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-top-color:var(--blue)}
 .channel-img{width:48px;height:48px;object-fit:cover;border-radius:50%;margin-bottom:12px;box-shadow:var(--shadow-sm);display:inline-block}
 .channel-card h3{font-size:0.95rem;font-weight:700;margin-bottom:8px}
-.channel-card p{font-size:0.82rem;color:var(--text-light);line-height:1.55;margin-bottom:12px}
+.channel-card p{font-size:0.82rem;color:var(--text-light);line-height:1.55;margin-bottom:16px;flex:1}
 .channel-cta{font-size:0.8rem;font-weight:700;color:var(--blue)}
 .help-topics{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
 .help-topic{background:#fff;border-radius:var(--radius-lg);padding:22px;box-shadow:var(--shadow-sm);display:flex;gap:14px;align-items:flex-start;cursor:pointer;transition:all 0.25s}
@@ -220,8 +220,8 @@
   </div>
   <div class="channels">
     <div class="channel-card"><img src="../assets/contact-chat-icon.png" class="channel-img" alt="Chat"/><h3>In-App Chat</h3><p>Fastest resolution. Chat directly from the TROFi app — response in a matter of moments.</p><div class="channel-cta">Open TROFi App →</div></div>
-    <div class="channel-card"><img src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=150&q=80" class="channel-img" alt="Phone"/><h3>Phone Support</h3><p>Call our dedicated helpline for urgent ride, delivery, or payment issues.</p><div class="channel-cta">Helpline (Toll Free)</div></div>
-    <div class="channel-card"><img src="https://images.unsplash.com/photo-1557200134-90327ee9fafa?w=150&q=80" class="channel-img" alt="Email"/><h3>Email Support</h3><p>For non-urgent queries, billing issues, or escalations. We respond as quickly as possible.</p><div class="channel-cta">support@trofi.in →</div></div>
+    <div class="channel-card"><img src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=150&q=80" class="channel-img" alt="Phone"/><h3>Phone Support</h3><p>Call our dedicated helpline for urgent ride, delivery, or payment issues.</p><div class="channel-cta">Helpline (Toll Free) →</div></div>
+    <div class="channel-card"><img src="https://images.unsplash.com/photo-1557200134-90327ee9fafa?w=150&q=80" class="channel-img" alt="Email"/><h3>Email Support</h3><p>For non-urgent queries, billing issues, or escalations. We respond as quickly as possible.</p><div class="channel-cta">info@trofiventures.in →</div></div>
     <div class="channel-card"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" class="channel-img" alt="Social"/><h3>Social Support</h3><p>Tweet or DM us @TROFiApp for quick public escalations. Live daily.</p><div class="channel-cta">@TROFiApp →</div></div>
   </div>
 </div>
