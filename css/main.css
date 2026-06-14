@@ -426,7 +426,6 @@ h1, h2, h3, h4 { line-height: 1.1; }
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   margin-bottom: 20px;
 }
 
@@ -1443,5 +1442,26 @@ div[style*="background:var(--dark)"], div[style*="background:var(--dark)"] * {
 .qr-card * {
   color: var(--blue) !important;
   -webkit-text-fill-color: var(--blue) !important;
+}
+
+/* Explicit background and border for yellow section labels */
+.superpass-card .section-label,
+.download-section .section-label {
+  background: var(--yellow) !important;
+  border: 1px solid var(--yellow) !important;
+}
+
+/* Style SVG icons inside section labels */
+.section-label svg.label-icon-svg {
+  width: 18px !important;
+  height: 18px !important;
+  vertical-align: middle !important;
+  margin-right: 8px !important;
+  flex-shrink: 0 !important;
+}
+
+/* Prevent -webkit-text-fill-color from breaking SVG fills/strokes */
+svg, svg * {
+  -webkit-text-fill-color: initial !important;
 }
 
