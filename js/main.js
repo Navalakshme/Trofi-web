@@ -187,82 +187,114 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ── Mockup Offers Carousel ──
+  // ── Mockup Offers Carousel (Continuous Infinite Loop) ──
   const track = document.querySelector('.mockup-slider-track');
-  const dots = document.querySelectorAll('.mockup-slider-dots .dot');
   const overlay = document.querySelector('.mockup-slider-overlay');
   
   if (track && overlay) {
-    let currentIndex = 0;
-    const totalSlides = 3; // 3 slides
-    let autoPlayTimer = null;
+    const slides = Array.from(track.children);
+    const totalOriginalSlides = slides.length; // should be 3
     
-    const updateSlider = (index) => {
-      currentIndex = index;
-      track.style.transform = `translateX(-${index * 33.3333}%)`;
-      if (dots.length) {
-        dots.forEach((dot, idx) => {
-          dot.classList.toggle('active', idx === index);
-        });
-      }
-    };
-    
-    const startAutoPlay = () => {
-      autoPlayTimer = setInterval(() => {
-        let nextIndex = (currentIndex + 1) % totalSlides;
-        updateSlider(nextIndex);
-      }, 4000);
-    };
-    
-    const stopAutoPlay = () => {
-      if (autoPlayTimer) {
-        clearInterval(autoPlayTimer);
-      }
-    };
-    
-    // Dot click (if any exist)
-    if (dots.length) {
-      dots.forEach((dot, index) => {
-        dot.addEventListener('click', (e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          stopAutoPlay();
-          updateSlider(index);
-          startAutoPlay();
-        });
-      });
-    }
-    
-    // Touch swipe support
-    let startX = 0;
-    let isDragging = false;
-    
-    overlay.addEventListener('touchstart', (e) => {
-      startX = e.touches[0].clientX;
-      isDragging = true;
-      stopAutoPlay();
-    }, { passive: true });
-    
-    overlay.addEventListener('touchend', (e) => {
-      if (!isDragging) return;
-      isDragging = false;
-      const endX = e.changedTouches[0].clientX;
-      const diffX = startX - endX;
+    if (totalOriginalSlides > 1) {
+      // 1. Clone the first slide and append it to the end
+      const firstClone = slides[0].cloneNode(true);
+      track.appendChild(firstClone);
       
-      // Threshold of 30px
-      if (Math.abs(diffX) > 30) {
-        if (diffX > 0) {
-          // Swipe left -> Next
-          updateSlider((currentIndex + 1) % totalSlides);
-        } else {
-          // Swipe right -> Prev
-          updateSlider((currentIndex - 1 + totalSlides) % totalSlides);
-        }
+      // 2. Adjust track and slides width dynamically
+      const totalSlidesCount = totalOriginalSlides + 1; // 4 slides
+      track.style.width = `${totalSlidesCount * 100}%`;
+      track.style.display = 'flex';
+      track.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
+      
+      const allSlides = track.children;
+      for (let slide of allSlides) {
+        slide.style.width = `${100 / totalSlidesCount}%`;
       }
+      
+      let currentIndex = 0;
+      let autoPlayTimer = null;
+      let isTransitioning = false;
+      
+      const updateSlider = (index) => {
+        if (isTransitioning) return;
+        
+        track.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
+        track.style.transform = `translateX(-${index * (100 / totalSlidesCount)}%)`;
+        currentIndex = index;
+        
+        // Handle wrapping from cloned slide back to the first slide
+        if (index === totalOriginalSlides) {
+          isTransitioning = true;
+          // Wait for transition to complete
+          setTimeout(() => {
+            track.style.transition = 'none';
+            track.style.transform = 'translateX(0)';
+            currentIndex = 0;
+            isTransitioning = false;
+          }, 500); // 500ms matches the transition duration
+        }
+      };
+      
+      const startAutoPlay = () => {
+        autoPlayTimer = setInterval(() => {
+          if (!isTransitioning) {
+            updateSlider(currentIndex + 1);
+          }
+        }, 4000);
+      };
+      
+      const stopAutoPlay = () => {
+        if (autoPlayTimer) {
+          clearInterval(autoPlayTimer);
+        }
+      };
+      
+      // Touch swipe support
+      let startX = 0;
+      let isDragging = false;
+      
+      overlay.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+        stopAutoPlay();
+      }, { passive: true });
+      
+      overlay.addEventListener('touchend', (e) => {
+        if (!isDragging) return;
+        isDragging = false;
+        const endX = e.changedTouches[0].clientX;
+        const diffX = startX - endX;
+        
+        // Threshold of 30px
+        if (Math.abs(diffX) > 30) {
+          if (diffX > 0) {
+            // Swipe left -> Next
+            if (!isTransitioning) {
+              updateSlider(currentIndex + 1);
+            }
+          } else {
+            // Swipe right -> Prev
+            if (!isTransitioning) {
+              if (currentIndex === 0) {
+                // If we are on the first slide and swipe right, jump to cloned slide instantly first
+                track.style.transition = 'none';
+                track.style.transform = `translateX(-${totalOriginalSlides * (100 / totalSlidesCount)}%)`;
+                currentIndex = totalOriginalSlides;
+                // Then in next frame, transition to slide 3 (index 2)
+                setTimeout(() => {
+                  updateSlider(totalOriginalSlides - 1);
+                }, 20);
+              } else {
+                updateSlider(currentIndex - 1);
+              }
+            }
+          }
+        }
+        startAutoPlay();
+      });
+      
       startAutoPlay();
-    });
-    
-    startAutoPlay();
+    }
   }
 
 });
