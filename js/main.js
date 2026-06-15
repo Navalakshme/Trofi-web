@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── Navbar scroll behaviour ──
   const nav = document.querySelector('.nav');
   if (nav) {
-    const heroSection = document.querySelector('.hero');
+    const heroSection = document.querySelector('.hero, .article-hero');
     const handleScroll = () => {
       if (window.scrollY > 20) {
         nav.classList.add('scrolled');

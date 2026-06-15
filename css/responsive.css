@@ -57,7 +57,6 @@ body {
 
   .nav-logo img {
     height: 56px !important;
-    mix-blend-mode: normal !important;
   }
 
   .nav-links,
@@ -321,8 +320,6 @@ body {
   .features-grid-2,
   .features-grid-3,
   .ride-types,
-  .cuisine-grid,
-  .category-grid,
   .testi-grid,
   .testimonials-grid,
   .blog-grid,
@@ -338,6 +335,12 @@ body {
   .pay-banner-features,
   .service-banner-features {
     grid-template-columns: 1fr !important;
+  }
+
+  .cuisine-grid,
+  .category-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 14px !important;
   }
 
   .services-right-col {
@@ -553,5 +556,16 @@ body {
   .float-card-4 {
     right: -80px !important;
     left: auto !important;
+  }
+
+  .cuisine-grid,
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  .cuisine-card,
+  .category-tile {
+    height: 125px !important;
   }
 }

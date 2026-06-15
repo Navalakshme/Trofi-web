@@ -148,14 +148,14 @@ h1, h2, h3, h4 { line-height: 1.1; }
   height: 80px;
   width: auto;
   object-fit: contain;
-  background: rgba(255, 221, 0, 0.2); /* Soft yellow background to blend with yellow hero */
+  background: transparent;
   border-radius: 12px;
   padding: 4px;
-  transition: var(--transition);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .nav.scrolled .nav-logo img {
-  background: var(--yellow); /* Full brand yellow background on scrolled white navbar */
+  background: var(--yellow);
   box-shadow: var(--shadow-sm);
 }
 
@@ -255,11 +255,6 @@ h1, h2, h3, h4 { line-height: 1.1; }
 }
 
 .nav.transparent { background: transparent; }
-
-/* Inner pages have light/white hero backgrounds — keep logo normal */
-.nav.transparent .nav-logo img {
-  mix-blend-mode: normal;
-}
 
 /* ── Buttons ── */
 .btn {
@@ -643,8 +638,10 @@ h1, h2, h3, h4 { line-height: 1.1; }
 .footer-brand img {
   width: 72px !important;
   height: 72px !important;
-  object-fit: cover !important;
+  object-fit: contain !important;
   border-radius: 12px !important;
+  background: var(--yellow);
+  padding: 4px;
 }
 
 .footer-brand p {
@@ -1506,5 +1503,103 @@ div[style*="background: var(--yellow)"] * {
 /* Prevent -webkit-text-fill-color from breaking SVG fills/strokes */
 svg, svg * {
   -webkit-text-fill-color: initial !important;
+}
+
+.hero-phone-wrapper {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+  background: transparent;
+  margin-top: -95px; /* Shift the phone mockup higher up to fill empty space and prevent bottom clipping */
+  margin-left: auto;
+  margin-right: auto;
+  animation: floatPhone 6s ease-in-out infinite;
+}
+
+/* The actual Home Mockup image */
+.hero-mockup-img {
+  width: 380px;
+  height: auto;
+  object-fit: contain;
+  background: transparent;
+  box-shadow: none;
+  filter: none;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+/* Interactive Offers Slider Overlay */
+.mockup-slider-overlay {
+  position: absolute;
+  top: 69.52%;
+  left: 8.50%;
+  width: 83.00%;
+  height: 17.19%;
+  z-index: 10;
+  border-radius: 8px;
+  overflow: hidden;
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+}
+
+.mockup-slider-track {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.mockup-slide {
+  width: 33.333%;
+  height: 100%;
+  display: block;
+  box-sizing: border-box;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+.mockup-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+.mockup-slider-dots {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 15;
+}
+
+.mockup-slider-dots .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(0, 84, 196, 0.25);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mockup-slider-dots .dot.active {
+  width: 12px;
+  background: var(--blue);
+  border-radius: 3px;
+}
+
+@keyframes floatPhone {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
 }
 
