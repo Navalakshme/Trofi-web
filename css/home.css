@@ -336,7 +336,7 @@ h1.display-hero span.hero-line-orange {
 
 .superpass-benefit {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 14px;
   background: rgba(255,255,255,0.08);
   border-radius: var(--radius-md);
