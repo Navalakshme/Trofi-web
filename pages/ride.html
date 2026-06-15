@@ -16,7 +16,7 @@
 
 /* HERO MOCKUP — clean, no shadow, no bg, just the image */
 .hero-mockup{display:flex;justify-content:center;align-items:center}
-.hero-mockup img{
+.hero-mockup-img{
   width:380px;
   height:auto;
   object-fit:contain;
@@ -24,7 +24,21 @@
   box-shadow:none;
   filter:none;
   display:block;
-  animation:floatPhone 6s ease-in-out infinite;
+}
+
+/* Mockup Slider Overrides for Ride page */
+.hero-phone-wrapper {
+  margin-top: 0 !important;
+}
+.ride-mockup-slider {
+  top: 70% !important;
+  left: 5% !important;
+  width: 89% !important;
+  height: 18.5% !important;
+  border-radius: 28px !important;
+}
+.ride-mockup-slider .mockup-slide img {
+  object-fit: fill !important;
 }
 
 @keyframes floatPhone {
@@ -151,7 +165,7 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <div class="nav-cta">
-      <a href="partners.html#driver" class="btn btn-outline btn-sm">Become a Driver</a>
+      <a href="partners.html#driver" class="btn btn-outline btn-sm">Become a Co-pilot</a>
       <a href="../index.html#download" class="btn btn-outline-yellow btn-sm">Get the App</a>
     </div>
     <button class="hamburger" aria-label="Menu">
@@ -183,7 +197,7 @@
       <p class="hero-p fade-up delay-2">Bike taxis, autos, cabs & intercity cabs — booked in a matter of moments. Zero surge pricing, always. Background-verified drivers, every time.</p>
       <div class="hero-btns fade-up delay-3">
         <a href="../index.html#download" class="btn btn-secondary btn-lg">Book a Ride →</a>
-        <a href="partners.html#driver" class="btn btn-outline btn-lg">Become a Driver</a>
+        <a href="partners.html#driver" class="btn btn-outline btn-lg">Become a Co-pilot</a>
       </div>
       <div class="hero-badges fade-up delay-4">
         <span class="badge">🛡️ Background Verified Captains</span>
@@ -192,7 +206,26 @@
       </div>
     </div>
     <div class="hero-mockup slide-right delay-2">
-      <img src="../assets/mockup-travel.png" alt="TROFi Ride App"/>
+      <div class="hero-phone-wrapper">
+        <img src="../assets/mockup-travel.png" alt="TROFi Ride App" class="hero-mockup-img" />
+        <!-- Interactive Offers Slider Overlay for Ride -->
+        <div class="mockup-slider-overlay ride-mockup-slider">
+          <div class="mockup-slider-track">
+            <!-- Slide 1: Bike -->
+            <div class="mockup-slide">
+              <img src="../assets/offer-slide-ride-bike.png" alt="Bike Promo" />
+            </div>
+            <!-- Slide 2: Auto -->
+            <div class="mockup-slide">
+              <img src="../assets/offer-slide-ride-auto.png" alt="Auto Promo" />
+            </div>
+            <!-- Slide 3: Cab -->
+            <div class="mockup-slide">
+              <img src="../assets/offer-slide-ride-cab.png" alt="Cab Promo" />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -272,20 +305,22 @@
 </div>
 
 <footer class="footer">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <img src="../assets/TROFi_logo.png?v=2" alt="TROFi"/>
-      <p>India's next-generation super-app for rides, food delivery, quick commerce, and financial services.</p>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="../assets/TROFi_logo.png?v=2" alt="TROFi"/>
+        <p>India's next-generation super-app for rides, food delivery, quick commerce, and financial services.</p>
+      </div>
+      <div class="footer-col"><h4>Services</h4><a href="ride.html">TROFi Ride</a><a href="eats.html">TROFi Eats</a><a href="mart.html">TROFi Mart</a><a href="pay.html">TROFi Pay</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="about.html">About TROFi</a><a href="coming-soon.html">Careers</a><!-- <a href="article-superapp.html">Blog</a> --></div>
+      <div class="footer-col"><h4>Partners</h4><a href="partners.html#driver">Become a Co-pilot</a><a href="partners.html#restaurant">List your Restaurant</a><a href="partners.html#store">Partner your Store</a></div>
+      <div class="footer-col"><h4>Support</h4><a href="coming-soon.html">Help Centre</a><a href="contact.html#grievance">Grievance</a><a href="coming-soon.html">Privacy</a><a href="coming-soon.html">Terms</a></div>
     </div>
-    <div class="footer-col"><h4>Services</h4><a href="ride.html">TROFi Ride</a><a href="eats.html">TROFi Eats</a><a href="mart.html">TROFi Mart</a><a href="pay.html">TROFi Pay</a></div>
-    <div class="footer-col"><h4>Company</h4><a href="about.html">About TROFi</a><a href="about.html#careers">Careers</a><a href="article-superapp.html">Blog</a></div>
-    <div class="footer-col"><h4>Partners</h4><a href="partners.html#driver">Become a Driver</a><a href="partners.html#restaurant">List Restaurant</a><a href="partners.html#store">Partner Store</a></div>
-    <div class="footer-col"><h4>Support</h4><a href="contact.html">Help Centre</a><a href="contact.html#grievance">Grievance</a><a href="#">Privacy</a><a href="#">Terms</a></div>
+    <div class="footer-bottom">
+      <p>© TROFi Ventures Private Limited · Bengaluru, India</p>
+      <p>Secure & Regulated · Privacy Protected</p>
+    </div>
   </div>
-  <div class="footer-bottom">
-  <p>© TROFi Ventures Private Limited · Bengaluru, India</p>
-  <p>Secure & Regulated · Privacy Protected</p>
-</div>
 </footer>
 
 <script src="../js/main.js"></script>

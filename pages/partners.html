@@ -91,6 +91,81 @@
   line-height: 0.9 !important;
   margin-bottom: 24px;
 }
+
+/* COMING SOON OVERLAY */
+.coming-soon-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-xl);
+  background: rgba(10, 10, 15, 0.42);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0;
+  animation: overlayFadeIn 0.7s ease forwards;
+}
+
+@keyframes overlayFadeIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.coming-soon-text {
+  font-family: var(--font-display);
+  font-size: clamp(38px, 6vw, 72px);
+  color: var(--yellow);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1;
+  text-shadow: 0 0 40px rgba(255, 221, 0, 0.6), 0 0 80px rgba(255, 221, 0, 0.25);
+  animation: csPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes csPulse {
+  0%, 100% { text-shadow: 0 0 30px rgba(255,221,0,0.55), 0 0 70px rgba(255,221,0,0.2); }
+  50%       { text-shadow: 0 0 60px rgba(255,221,0,0.9), 0 0 120px rgba(255,221,0,0.45); }
+}
+
+.coming-soon-sub {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.65);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Spark particles */
+.sparks {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  pointer-events: none;
+}
+
+.spark {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--yellow);
+  box-shadow: 0 0 8px 2px rgba(255,221,0,0.7);
+  animation: sparkFloat var(--dur, 3s) ease-in-out var(--delay, 0s) infinite;
+  opacity: 0;
+}
+
+@keyframes sparkFloat {
+  0%   { opacity: 0; transform: translateY(0) scale(0.5); }
+  15%  { opacity: 1; }
+  80%  { opacity: 0.6; }
+  100% { opacity: 0; transform: translateY(-120px) scale(1.3); }
+}
 </style>
 <link rel="stylesheet" href="../css/responsive.css?v=1.0.1" />
 </head><body>
@@ -194,7 +269,7 @@
 
   <!-- DRIVER -->
   <div class="panel active" id="panel-driver">
-    <div class="earnings-card" style="background:linear-gradient(135deg,var(--blue-dark),var(--blue))">
+    <div class="earnings-card" id="earnings-driver" style="background:linear-gradient(135deg,var(--blue-dark),var(--blue))">
       <div class="section-tag" style="background:var(--yellow) !important;color:var(--blue) !important;-webkit-text-fill-color:var(--blue) !important;font-weight:800 !important;margin-bottom:14px;font-size:0.85rem !important;padding:6px 14px !important;text-transform:uppercase;letter-spacing:0.08em !important;">Delivery Partner</div>
       <div style="font-family:var(--font-display);font-size:clamp(36px,4vw,56px);color:#fff;line-height:1;margin-bottom:12px">Earn competitive payouts<br/><span style="color:var(--yellow)">Every Month.</span></div>
       <p style="color:rgba(255,255,255,0.7);max-width:460px;font-size:0.9rem">Flexible hours, daily payouts, free insurance — TROFi is the best platform for delivery partners in India.</p>
@@ -202,6 +277,12 @@
         <div class="earnings-stat"><div class="n">Competitive</div><div class="l">Average monthly earnings</div></div>
         <div class="earnings-stat"><div class="n">Daily</div><div class="l">Instant payout to bank</div></div>
         <div class="earnings-stat"><div class="n">Full</div><div class="l">Accident insurance cover</div></div>
+      </div>
+      <!-- Coming Soon Overlay -->
+      <div class="coming-soon-overlay" id="cs-driver">
+        <div class="sparks" id="sparks-driver"></div>
+        <div class="coming-soon-text">✦ Coming Soon ✦</div>
+        <div class="coming-soon-sub">Launching very soon in India</div>
       </div>
     </div>
     <div class="two-col">
@@ -277,6 +358,12 @@
         <div class="earnings-stat"><div class="n">Weekly</div><div class="l">Payouts to your account</div></div>
         <div class="earnings-stat"><div class="n">1:1</div><div class="l">Dedicated account manager</div></div>
       </div>
+      <!-- Coming Soon Overlay -->
+      <div class="coming-soon-overlay" id="cs-restaurant">
+        <div class="sparks" id="sparks-restaurant"></div>
+        <div class="coming-soon-text">✦ Coming Soon ✦</div>
+        <div class="coming-soon-sub">Launching very soon in India</div>
+      </div>
     </div>
     <div class="two-col">
       <div>
@@ -350,6 +437,12 @@
         <div class="earnings-stat"><div class="n">Local</div><div class="l">Order radius from store</div></div>
         <div class="earnings-stat"><div class="n">Daily</div><div class="l">Sales settlement</div></div>
       </div>
+      <!-- Coming Soon Overlay -->
+      <div class="coming-soon-overlay" id="cs-store">
+        <div class="sparks" id="sparks-store"></div>
+        <div class="coming-soon-text">✦ Coming Soon ✦</div>
+        <div class="coming-soon-sub">Launching very soon in India</div>
+      </div>
     </div>
     <div class="two-col">
       <div>
@@ -404,20 +497,22 @@
 
 
 <footer class="footer">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <img src="../assets/TROFi_logo.png?v=2" alt="TROFi"/>
-      <p>India's next-generation super-app for rides, food delivery, quick commerce, and financial services.</p>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="../assets/TROFi_logo.png?v=2" alt="TROFi"/>
+        <p>India's next-generation super-app for rides, food delivery, quick commerce, and financial services.</p>
+      </div>
+      <div class="footer-col"><h4>Services</h4><a href="ride.html">TROFi Ride</a><a href="eats.html">TROFi Eats</a><a href="mart.html">TROFi Mart</a><a href="pay.html">TROFi Pay</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="about.html">About TROFi</a><a href="coming-soon.html">Careers</a><!-- <a href="article-superapp.html">Blog</a> --></div>
+      <div class="footer-col"><h4>Partners</h4><a href="partners.html#driver">Become a Co-pilot</a><a href="partners.html#restaurant">List your Restaurant</a><a href="partners.html#store">Partner your Store</a></div>
+      <div class="footer-col"><h4>Support</h4><a href="coming-soon.html">Help Centre</a><a href="contact.html#grievance">Grievance</a><a href="coming-soon.html">Privacy</a><a href="coming-soon.html">Terms</a></div>
     </div>
-    <div class="footer-col"><h4>Services</h4><a href="ride.html">TROFi Ride</a><a href="eats.html">TROFi Eats</a><a href="mart.html">TROFi Mart</a><a href="pay.html">TROFi Pay</a></div>
-    <div class="footer-col"><h4>Company</h4><a href="about.html">About TROFi</a><a href="about.html#careers">Careers</a><a href="article-superapp.html">Blog</a></div>
-    <div class="footer-col"><h4>Partners</h4><a href="partners.html#driver">Become a Driver</a><a href="partners.html#restaurant">List Restaurant</a><a href="partners.html#store">Partner Store</a></div>
-    <div class="footer-col"><h4>Support</h4><a href="contact.html">Help Centre</a><a href="contact.html#grievance">Grievance</a><a href="#">Privacy</a><a href="#">Terms</a></div>
+    <div class="footer-bottom">
+      <p>© TROFi Ventures Private Limited · Bengaluru, India</p>
+      <p>Secure & Regulated · Privacy Protected</p>
+    </div>
   </div>
-  <div class="footer-bottom">
-  <p>© TROFi Ventures Private Limited · Bengaluru, India</p>
-  <p>Secure & Regulated · Privacy Protected</p>
-</div>
 </footer>
 
 <script src="../js/main.js"></script>
@@ -463,6 +558,37 @@ if (document.readyState === 'loading') {
 } else {
   handleHash();
 }
+
+// ── Coming Soon Spark Animation ──────────────────────────────────────────────
+(function() {
+  const sparkContainers = ['sparks-driver', 'sparks-restaurant', 'sparks-store'];
+  const SPARK_COUNT = 18;
+
+  sparkContainers.forEach(function(containerId) {
+    var container = document.getElementById(containerId);
+    if (!container) return;
+    for (var i = 0; i < SPARK_COUNT; i++) {
+      var s = document.createElement('span');
+      s.className = 'spark';
+      // Random horizontal spread
+      var left = (5 + Math.random() * 90).toFixed(1);
+      var bottom = (5 + Math.random() * 30).toFixed(1);
+      var dur = (2.2 + Math.random() * 2.8).toFixed(2);
+      var delay = (Math.random() * 3.5).toFixed(2);
+      var size = (4 + Math.random() * 5).toFixed(1);
+      s.style.cssText = [
+        'left:' + left + '%',
+        'bottom:' + bottom + '%',
+        'width:' + size + 'px',
+        'height:' + size + 'px',
+        '--dur:' + dur + 's',
+        '--delay:' + delay + 's',
+        'animation-delay:' + delay + 's'
+      ].join(';');
+      container.appendChild(s);
+    }
+  });
+})();
 </script>
 </body></html>
 

@@ -18,20 +18,27 @@
 
 /* HERO MOCKUP — clean, no shadow */
 .hero-mockup{display:flex;justify-content:center;align-items:center}
-.hero-mockup img{
+.hero-mockup img {
   width:380px;height:auto;
   object-fit:contain;
   background:transparent;
   box-shadow:none;
   filter:none;
   display:block;
-  animation:floatPhone 6s ease-in-out infinite;
 }
-
-@keyframes floatPhone {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-  100% { transform: translateY(0); }
+/* Mockup Slider Overrides for Mart page */
+.hero-phone-wrapper {
+  margin-top: 0 !important;
+}
+.mart-mockup-slider {
+  top: 30% !important;
+  left: 5.5% !important;
+  width: 88% !important;
+  height: 19% !important;
+  border-radius: 24px !important;
+}
+.mart-mockup-slider .mockup-slide img {
+  object-fit: fill !important;
 }
 
 /* STATS */
@@ -128,7 +135,7 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <div class="nav-cta">
-      <a href="partners.html#store" class="btn btn-outline btn-sm">Partner Store</a>
+      <a href="partners.html#store" class="btn btn-outline btn-sm">Partner your Store</a>
       <a href="../index.html#download" class="btn btn-outline-yellow btn-sm">Get the App</a>
     </div>
     <button class="hamburger" aria-label="Menu">
@@ -170,7 +177,30 @@
       </div>
     </div>
     <div class="hero-mockup slide-right delay-2">
-      <img src="../assets/mockup-shopping.png" alt="TROFi Mart App"/>
+      <div class="hero-phone-wrapper">
+        <img src="../assets/mockup-shopping.png" alt="TROFi Mart App" class="hero-mockup-img" />
+        <!-- Interactive Offers Slider Overlay for Mart -->
+        <div class="mockup-slider-overlay mart-mockup-slider">
+          <div class="mockup-slider-track">
+            <!-- Slide 1: Big Savings -->
+            <div class="mockup-slide">
+              <img src="../assets/offer-slide-mart-savings.png" alt="Big Savings" />
+            </div>
+            <!-- Slide 2: Every Grain -->
+            <div class="mockup-slide">
+              <img src="../assets/offer-slide-mart-grain.png" alt="Every Grain" />
+            </div>
+            <!-- Slide 3: Smarter Choices -->
+            <div class="mockup-slide">
+              <img src="../assets/offer-slide-mart-electronics.png" alt="Smarter Choices" />
+            </div>
+            <!-- Slide 4: Everything You Need -->
+            <div class="mockup-slide">
+              <img src="../assets/offer-slide-mart-stationery.png" alt="Everything You Need" />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -304,20 +334,22 @@
 
 <!-- FOOTER -->
 <footer class="footer">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <img src="../assets/TROFi_logo.png?v=2" alt="TROFi"/>
-      <p>India's next-generation super-app for rides, food delivery, quick commerce, and financial services.</p>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="../assets/TROFi_logo.png?v=2" alt="TROFi"/>
+        <p>India's next-generation super-app for rides, food delivery, quick commerce, and financial services.</p>
+      </div>
+      <div class="footer-col"><h4>Services</h4><a href="ride.html">TROFi Ride</a><a href="eats.html">TROFi Eats</a><a href="mart.html">TROFi Mart</a><a href="pay.html">TROFi Pay</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="about.html">About TROFi</a><a href="coming-soon.html">Careers</a><!-- <a href="article-superapp.html">Blog</a> --></div>
+      <div class="footer-col"><h4>Partners</h4><a href="partners.html#driver">Become a Co-pilot</a><a href="partners.html#restaurant">List your Restaurant</a><a href="partners.html#store">Partner your Store</a></div>
+      <div class="footer-col"><h4>Support</h4><a href="coming-soon.html">Help Centre</a><a href="contact.html#grievance">Grievance</a><a href="coming-soon.html">Privacy</a><a href="coming-soon.html">Terms</a></div>
     </div>
-    <div class="footer-col"><h4>Services</h4><a href="ride.html">TROFi Ride</a><a href="eats.html">TROFi Eats</a><a href="mart.html">TROFi Mart</a><a href="pay.html">TROFi Pay</a></div>
-    <div class="footer-col"><h4>Company</h4><a href="about.html">About TROFi</a><a href="about.html#careers">Careers</a><a href="article-superapp.html">Blog</a></div>
-    <div class="footer-col"><h4>Partners</h4><a href="partners.html#driver">Become a Driver</a><a href="partners.html#restaurant">List Restaurant</a><a href="partners.html#store">Partner Store</a></div>
-    <div class="footer-col"><h4>Support</h4><a href="contact.html">Help Centre</a><a href="contact.html#grievance">Grievance</a><a href="#">Privacy</a><a href="#">Terms</a></div>
+    <div class="footer-bottom">
+      <p>© TROFi Ventures Private Limited · Bengaluru, India</p>
+      <p>Secure & Regulated · Privacy Protected</p>
+    </div>
   </div>
-  <div class="footer-bottom">
-  <p>© TROFi Ventures Private Limited · Bengaluru, India</p>
-  <p>Secure & Regulated · Privacy Protected</p>
-</div>
 </footer>
 
 <script src="../js/main.js"></script>
